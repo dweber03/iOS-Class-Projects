@@ -10,4 +10,9 @@
 
 @interface DWFViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *myLabel;
+
+- (IBAction)buttonPressed:(id)sender;
+
+
 @end
