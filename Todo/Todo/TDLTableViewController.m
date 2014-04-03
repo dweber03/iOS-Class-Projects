@@ -72,16 +72,25 @@
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
         
-        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
         header.backgroundColor = [UIColor darkGrayColor];
         self.tableView.tableHeaderView = header;
 
         
-        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
-        titleHeader.text = @"Contacts";
-        titleHeader.textColor = [UIColor whiteColor];
-        [header addSubview:titleHeader];
+//        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+//        titleHeader.text = @"Contacts";
+//        titleHeader.textColor = [UIColor whiteColor];
+//        [header addSubview:titleHeader];
         
+        UITextField * nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
+        nameField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:.05];
+        nameField.layer.cornerRadius = 6;
+        
+        [header addSubview:nameField];
+        
+        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 20, 100, 30)];
+        [submitButton setTitle:@"New User" forState:UIControlStateNormal];
+        [header addSubview:submitButton];
         
         UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
         footer.backgroundColor = [UIColor darkGrayColor];
@@ -131,7 +140,7 @@
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
-    int index = indexPath.row;
+    NSInteger index = indexPath.row;
     
 
     NSDictionary * listItem = listItems[index];
