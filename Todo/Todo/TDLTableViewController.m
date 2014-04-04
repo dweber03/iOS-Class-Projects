@@ -14,14 +14,18 @@
 @implementation TDLTableViewController
 
 {
-    NSArray *listItems;
+    NSMutableArray *listItems;
+    
+    UITextField * nameField;
     
     NSArray *listImages;
+    
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    self = [super initWithStyle:UITableViewStylePlain];
+    
     if (self)
     {
         //       Hard Way  listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday",@"Wednesday", nil];
@@ -32,7 +36,7 @@
       //  NSDictionary * list = [NSDictionary alloc] initWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>
         
         
-        listItems = @[
+         listItems = [@[
                       @{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed: @"jonfox"], @"github": @"https://github.com/foxjon"},
                       @{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed: @"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
                       @{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed: @"savithareddy"], @"github": @"https://github.com/savithareddy"},
@@ -44,8 +48,9 @@
                       @{@"name" : @"John Yam", @"image" : [UIImage imageNamed: @"johnyam"], @"github": @"https://github.com/yamski"},
                       @{@"name" : @"Jeff King", @"image" : [UIImage imageNamed: @"jeffking"], @"github": @"https://github.com/rampis"},
                       @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed: @"jefferymoulds"], @"github": @"https://github.com/jdmgithub"},
-                      @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed: @"teddyconyers"], @"github": @"https://github.com/talented76"}];
-                      
+                      @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed: @"teddyconyers"], @"github": @"https://github.com/talented76"}] mutableCopy];
+        
+        
                       
 //
                       
@@ -68,6 +73,7 @@
 //                       [UIImage imageNamed: @"teddyconyers"],];
 //        
         
+        
                       
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -82,15 +88,34 @@
 //        titleHeader.textColor = [UIColor whiteColor];
 //        [header addSubview:titleHeader];
         
-        UITextField * nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
+        nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
         nameField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:.05];
         nameField.layer.cornerRadius = 6;
+        nameField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 30)];
+        nameField.leftViewMode = UITextFieldViewModeAlways;
+        
+        
+        nameField.delegate = self;
         
         [header addSubview:nameField];
         
         UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 20, 100, 30)];
         [submitButton setTitle:@"New User" forState:UIControlStateNormal];
+        submitButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        submitButton.backgroundColor = [UIColor darkGrayColor];
+        [submitButton addTarget:self action:@selector(newUser) forControlEvents:UIControlEventTouchUpInside];
+        
+         
         [header addSubview:submitButton];
+        
+        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 280, 30)];
+        titleHeader.text = @"GitHub Users";
+        titleHeader.textColor = [UIColor lightGrayColor];
+        titleHeader.font = [UIFont systemFontOfSize:26];
+        [header addSubview:titleHeader];
+        
+        
+        
         
         UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
         footer.backgroundColor = [UIColor darkGrayColor];
@@ -106,7 +131,34 @@
     }
     return self;
 }
+- (void) newUser
+        {
+            
+            NSString * username = nameField.text;
+            
+            nameField.text = @"";
+            
+            NSLog(@"%@", username);
+            NSLog(@"clicking");
+            [listItems addObject:@{@"name" : username,
+                                   //@"image" : [UIImage imageNamed: @"new_user"],
+                                   @"github":[NSString stringWithFormat: @"https://github.com/%@", username]}];
+            
+            [nameField resignFirstResponder];
+            [self.tableView reloadData];
+            
+            
 
+        }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+{
+    [self newUser];
+    
+    return YES;
+}
+
+         
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -142,8 +194,13 @@
     
     NSInteger index = indexPath.row;
     
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    
+    
+    
 
-    NSDictionary * listItem = listItems[index];
+    NSDictionary * listItem = reverseArray[index];
+
     
     cell.profileInfo = listItem; 
     

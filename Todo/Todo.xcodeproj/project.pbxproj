@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6648CA8118EDA79000FFA343 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6648CA8018EDA79000FFA343 /* TDLTableViewCell.m */; };
+		6659657A18EF332700016B82 /* GitHubFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6659657918EF332700016B82 /* GitHubFlow.storyboard */; };
 		66A6972E18EC4AEB008BF510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A6972D18EC4AEB008BF510 /* Foundation.framework */; };
 		66A6973018EC4AEB008BF510 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A6972F18EC4AEB008BF510 /* CoreGraphics.framework */; };
 		66A6973218EC4AEB008BF510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A6973118EC4AEB008BF510 /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		6648CA7F18EDA79000FFA343 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewCell.h; path = Todo/TDLTableViewCell.h; sourceTree = "<group>"; };
 		6648CA8018EDA79000FFA343 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewCell.m; path = Todo/TDLTableViewCell.m; sourceTree = "<group>"; };
+		6659657918EF332700016B82 /* GitHubFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GitHubFlow.storyboard; sourceTree = "<group>"; };
 		66A6972A18EC4AEB008BF510 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A6972D18EC4AEB008BF510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66A6972F18EC4AEB008BF510 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +132,7 @@
 		66A6972118EC4AEB008BF510 = {
 			isa = PBXGroup;
 			children = (
+				6659657918EF332700016B82 /* GitHubFlow.storyboard */,
 				6648CA8218EDA7BF00FFA343 /* Controllers */,
 				66A6973318EC4AEB008BF510 /* Todo */,
 				66A6974C18EC4AEB008BF510 /* TodoTests */,
@@ -302,6 +305,7 @@
 				66A6977418EC8B06008BF510 /* austenjohnson.png in Resources */,
 				66A6977118EC8B06008BF510 /* jefferymoulds.png in Resources */,
 				66A6973818EC4AEB008BF510 /* InfoPlist.strings in Resources */,
+				6659657A18EF332700016B82 /* GitHubFlow.storyboard in Resources */,
 				66A6977218EC8B06008BF510 /* jeffking.png in Resources */,
 				66A6977918EC8B06008BF510 /* alihoushmand.png in Resources */,
 				66A6977018EC8B06008BF510 /* teddyconyers.png in Resources */,
