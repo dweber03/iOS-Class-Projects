@@ -53,8 +53,11 @@
 - (void)setProfileInfo:(NSDictionary *)profileInfo
 
 {
+    NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:profileInfo[@"image"]]];
+    UIImage * image = [UIImage imageWithData:imageData];
     
-    profileImage.image = profileInfo[@"image"];
+    profileImage.image = image;
+    
     profileName.text = profileInfo[@"name"];
     profileURL.text = profileInfo[@"github"];
     

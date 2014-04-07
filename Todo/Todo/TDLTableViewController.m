@@ -10,6 +10,7 @@
 
 #import "TDLTableViewCell.h"
 
+#import "TDLGitHubRequest.h"
 
 @implementation TDLTableViewController
 
@@ -19,15 +20,30 @@
     UITextField * nameField;
     
     NSArray *listImages;
+   
+//    UINavigationController * navController;
     
 }
 
+- (void)toggleEdit
+{
+    [self.tableView setEditing: !self.tableView.editing animated:YES];
+    
+    
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     
     if (self)
     {
+//        UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
+//        navController = (UINavigationController *)window.rootViewController;
+        
+        
+        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
+        self.navigationItem.rightBarButtonItem = editButton;
+        
         //Hard Way  listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday",@"Wednesday", nil];
         
         //Easy way of Listing Items without the NSArray alloc & initWithObjects
@@ -36,20 +52,26 @@
         
         //  NSDictionary * list = [NSDictionary alloc] initWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>
         
-        listItems = [@[
-                       @{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed: @"jonfox"], @"github": @"https://github.com/foxjon"},
-                       @{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed: @"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
-                       @{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed: @"savithareddy"], @"github": @"https://github.com/savithareddy"},
-                       @{@"name" : @"TJ Mercer", @"image" : [UIImage imageNamed: @"tjmercer"], @"github": @"https://github.com/gwanunig14"},
-                       @{@"name" : @"Just a Girl Coding", @"image" : [UIImage imageNamed: @"justagirlcoding"], @"github": @"https://github.com/justagirlcoding"},
-                       @{@"name" : @"Ashby", @"image" : [UIImage imageNamed: @"ashby"], @"github": @"https://github.com/athornwell"},
-                       @{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed: @"jishaobukwelu"], @"github": @"https://github.com/Jiobu"},
-                       @{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed: @"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
-                       @{@"name" : @"John Yam", @"image" : [UIImage imageNamed: @"johnyam"], @"github": @"https://github.com/yamski"},
-                       @{@"name" : @"Jeff King", @"image" : [UIImage imageNamed: @"jeffking"], @"github": @"https://github.com/rampis"},
-                       @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed: @"jefferymoulds"], @"github": @"https://github.com/jdmgithub"},
-                       @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed: @"teddyconyers"], @"github": @"https://github.com/talented76"}] mutableCopy];
+//        listItems = [@[
+//                       @{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed: @"jonfox"], @"github": @"https://github.com/foxjon"},
+//                       @{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed: @"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
+//                       @{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed: @"savithareddy"], @"github": @"https://github.com/savithareddy"},
+//                       @{@"name" : @"TJ Mercer", @"image" : [UIImage imageNamed: @"tjmercer"], @"github": @"https://github.com/gwanunig14"},
+//                       @{@"name" : @"Just a Girl Coding", @"image" : [UIImage imageNamed: @"justagirlcoding"], @"github": @"https://github.com/justagirlcoding"},
+//                       @{@"name" : @"Ashby", @"image" : [UIImage imageNamed: @"ashby"], @"github": @"https://github.com/athornwell"},
+//                       @{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed: @"jishaobukwelu"], @"github": @"https://github.com/Jiobu"},
+//                       @{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed: @"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
+//                       @{@"name" : @"John Yam", @"image" : [UIImage imageNamed: @"johnyam"], @"github": @"https://github.com/yamski"},
+//                       @{@"name" : @"Jeff King", @"image" : [UIImage imageNamed: @"jeffking"], @"github": @"https://github.com/rampis"},
+//                       @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed: @"jefferymoulds"], @"github": @"https://github.com/jdmgithub"},
+//                       @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed: @"teddyconyers"], @"github": @"https://github.com/talented76"}] mutableCopy];
         
+        listItems = [@[
+                       @{@"name":  @"Derek Weber",
+                         @"image": @"https://avatars0.githubusercontent.com/u/6764483?s=460",
+                         @"github": @"https://github.com/derekweber"
+                         }
+                       ] mutableCopy];
         //
         //        listImages = @[
         //                       [UIImage imageNamed: @"jonfox"],
@@ -58,6 +80,7 @@
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
+        self.tableView.editing = YES;
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
         header.backgroundColor = [UIColor darkGrayColor];
@@ -102,7 +125,7 @@
         //[self.tableView setTableHeaderView:header];
         
         
-        NSLog(@"listItems : %@ ....%@", listItems, listItems[0]);
+//        NSLog(@"listItems : %@ ....%@", listItems, listItems[0]);
         
     }
     return self;
@@ -114,11 +137,17 @@
     
     nameField.text = @"";
     
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
+    
+    if ([[userInfo allKeys] count] == 3) [listItems addObject:userInfo];
+    else NSLog(@"not enough data");
+    
     NSLog(@"%@", username);
     NSLog(@"clicking");
-    [listItems addObject:@{@"name" : username,
-                           //@"image" : [UIImage imageNamed: @"new_user"],
-                           @"github":[NSString stringWithFormat: @"https://github.com/%@", username]}];
+    
+//    [listItems addObject:@{@"name" : username,
+//                           //@"image" : [UIImage imageNamed: @"new_user"],
+//                           @"github":[NSString stringWithFormat: @"https://github.com/%@", username]}];
     
     [nameField resignFirstResponder];
     [self.tableView reloadData];
@@ -158,11 +187,10 @@
     return [listItems count];
 }
 
-- (NSDictionary *) getListItem:(NSIndexPath *)indexPath
+- (NSDictionary *) getListItem:(NSInteger)row
 {
-    NSInteger index = indexPath.row;
     NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
-    NSDictionary * listItem = reverseArray[index];
+    NSDictionary * listItem = reverseArray[row];
     return listItem;
 }
 
@@ -172,7 +200,7 @@
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
-    NSDictionary * listItem = [self getListItem:indexPath];
+    NSDictionary * listItem = [self getListItem:indexPath.row];
     
     cell.profileInfo = listItem;
     
@@ -190,8 +218,52 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * listItem = [self getListItem:indexPath];
+    NSDictionary * listItem = [self getListItem:indexPath.row];
+    
     NSLog(@"%@", listItem);
+    
+    UIViewController * webController = [[UIViewController alloc] init];
+    
+    UIWebView *webView = [[UIWebView alloc] init];
+    
+    webController.view = webView;
+    
+    [self.navigationController pushViewController:webController animated:YES];
+    [webView loadRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:listItem[@"github"]]]];
+    
+}
+
+- (BOOL)tableView: (UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+//    [listItems removeObjectAtIndex:indexPath.row];
+
+    
+//    [listItems removeObjectIdenticalTo:listItem];
+    
+    [self.tableView reloadData];
+}
+
+- (BOOL)tableView: (UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    if (sourceIndexPath == destinationIndexPath) return;
+    
+    NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
+    
+    NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
+    
+    [listItems removeObjectIdenticalTo:sourceItem];
+    [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
+    
 }
 
 /*
