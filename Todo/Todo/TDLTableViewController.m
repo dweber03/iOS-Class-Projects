@@ -22,9 +22,9 @@
     
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithStyle:style];
     
     if (self)
     {
