@@ -185,22 +185,21 @@
     return [listItems count];
 }
 
+- (NSDictionary *) getListItem:(NSIndexPath *)indexPath
+{
+    NSInteger index = indexPath.row;
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    NSDictionary * listItem = reverseArray[index];
+    return listItem;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    
-    NSInteger index = indexPath.row;
-    
-    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
-    
-    
-    
 
-    NSDictionary * listItem = reverseArray[index];
-
+    NSDictionary * listItem = [self getListItem:indexPath];
     
     cell.profileInfo = listItem; 
     
