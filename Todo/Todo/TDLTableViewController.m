@@ -25,12 +25,12 @@
     
 }
 
-- (void)toggleEdit
-{
-    [self.tableView setEditing: !self.tableView.editing animated:YES];
+//- (void)toggleEdit
+//{
+//    [self.tableView setEditing: !self.tableView.editing animated:YES];
+
     
-    
-}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -41,8 +41,8 @@
 //        navController = (UINavigationController *)window.rootViewController;
         
         
-        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
-        self.navigationItem.rightBarButtonItem = editButton;
+//        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
+//        self.navigationItem.rightBarButtonItem = editButton;
         
         //Hard Way  listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday",@"Wednesday", nil];
         
@@ -80,7 +80,7 @@
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
-        self.tableView.editing = YES;
+//        self.tableView.editing = YES;
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
         header.backgroundColor = [UIColor darkGrayColor];
@@ -131,6 +131,8 @@
     return self;
 }
 
+
+
 - (void) newUser
 {
     NSString * username = nameField.text;
@@ -139,11 +141,19 @@
     
     NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
     
-    if ([[userInfo allKeys] count] == 3) [listItems addObject:userInfo];
-    else NSLog(@"not enough data");
+    if ([[userInfo allKeys] count] == 3)
+    {
+        [listItems addObject:userInfo];}
+    else {
+        
+    NSLog(@"not enough data");
+        
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Bad Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+        
+        [alertView show];
+        
+    }
     
-    NSLog(@"%@", username);
-    NSLog(@"clicking");
     
 //    [listItems addObject:@{@"name" : username,
 //                           //@"image" : [UIImage imageNamed: @"new_user"],
@@ -170,7 +180,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -246,6 +256,7 @@
 //    [listItems removeObjectIdenticalTo:listItem];
     
     [self.tableView reloadData];
+    [self saveData]; 
 }
 
 - (BOOL)tableView: (UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -264,6 +275,31 @@
     [listItems removeObjectIdenticalTo:sourceItem];
     [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
     
+    [self saveData];
+    
+}
+
+- (void)saveData
+{
+    NSString *path = [self listArchivePath];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listItems];
+    [data writeToFile:path options:NSDataWritingAtomic error:nil];
+}
+
+- (NSString *) listArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = documentDirectories[0];
+    return [documentDirectory stringByAppendingPathComponent:@"listdata.data"];
+}
+
+- (void) loadListItems
+{
+    NSString *path = [self listArchivePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        listItems = [NSKeyedUnarchiver unarchiveObjectWithFile: path];
+    }
 }
 
 /*
