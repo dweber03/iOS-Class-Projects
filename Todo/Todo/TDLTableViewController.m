@@ -66,12 +66,17 @@
 //                       @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed: @"jefferymoulds"], @"github": @"https://github.com/jdmgithub"},
 //                       @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed: @"teddyconyers"], @"github": @"https://github.com/talented76"}] mutableCopy];
         
-        listItems = [@[
-                       @{@"name":  @"Derek Weber",
-                         @"image": @"https://avatars0.githubusercontent.com/u/6764483?s=460",
-                         @"github": @"https://github.com/derekweber"
-                         }
-                       ] mutableCopy];
+//        listItems = [@[
+//                       @{@"name":  @"Derek Weber",
+//                         @"image": @"https://avatars0.githubusercontent.com/u/6764483?s=460",
+//                         @"github": @"https://github.com/derekweber"
+//                         }
+//                       ] mutableCopy];
+        
+        
+        listItems = [@[] mutableCopy];
+        [self loadListItems]; 
+        
         //
         //        listImages = @[
         //                       [UIImage imageNamed: @"jonfox"],
@@ -161,6 +166,7 @@
     
     [nameField resignFirstResponder];
     [self.tableView reloadData];
+    [self saveData];
     
 }
 
