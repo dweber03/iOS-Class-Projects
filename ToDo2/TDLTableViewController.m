@@ -7,7 +7,8 @@
 //
 
 #import "TDLTableViewController.h"
-#import "TDLTableViewCell.h"
+//#import "TDLTableViewCell.h"
+#import "MOVE.h"
 
 @interface TDLTableViewController ()
 
@@ -18,12 +19,7 @@
     NSMutableArray * listItems;
     UITextField * listItemField;
     NSArray * priorityColors;
-    
-    
-    
 }
-
-
     UIButton * lowButton;
     UIButton * medButton;
     UIButton * highButton;
@@ -40,11 +36,11 @@
        
         listItems = [@[
                        @{@"name":@"Workshop App",
-                         @"priority" : @3
+                         @"priority" : @3, @"constant" : @3
                          },
-                       @{@"name": @"Add Class Twitter", @"priority": @2},
-                       @{@"name": @"Blog on Wordpress", @"priority": @1},
-                       @{@"name": @"Finish GitHub App", @"priority": @0},
+                       @{@"name": @"Add Class Twitter", @"priority": @2, @"constant" : @2},
+                       @{@"name": @"Blog on Wordpress", @"priority": @1, @"constant" : @1},
+                       @{@"name": @"Finish GitHub App", @"priority": @1, @"constant" : @1},
                        ] mutableCopy];
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -90,26 +86,47 @@
 //        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
 //        titleHeader.text = @"ToDo Item";
 //        titleHeader.textColor = [UIColor whiteColor];
-//        [header addSubview:titleHeader];
-                                                       
-                                                    
-                                                       
-                                                       
-                                                       
-    
-       
-        
-       
-        
-        
-        
-
+//        [header addSubview:titleHeader]
         
     }
     return self;
 }
 
+-(void)deleteItem:(TDLTableViewCell *)cell
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    [listItems removeObjectAtIndex: indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade]; 
+}
 
+-(void)setItemPriority:(int)priority withItem:(TDLTableViewCell *)cell
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary * listItem = listItems[indexPath.row];
+    
+    NSDictionary * updateListItem = @{
+                                      @"name": listItem[@"name"],
+                                        @"priority" : @(priority),
+                                        @"constant" : @(priority)};
+    
+    [listItems removeObjectAtIndex: indexPath.row];
+    [listItems insertObject:updateListItem atIndex:indexPath.row];
+    cell.bgView.backgroundColor = priorityColors[priority];
+    [MOVE animateView:cell.bgView properties:@{@"x":@10,@"duration":@0.5}];
+    [cell hideCircleButtons];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"Returned");
+    [textField resignFirstResponder];
+    return YES;
+    
+
+    
+    
+}
 
 - (void)addNewListItem: (id)sender
 {
@@ -121,11 +138,9 @@
     
     if (![name isEqualToString:@""])
     {
-        [listItems insertObject:@{@"name": name, @"priority" : @(button.tag)} atIndex:0];
+        [listItems insertObject:@{@"name": name, @"priority" : @(button.tag),@"constant" : @(button.tag)} atIndex:0];
         
         // @(button.tag) = NSNumber numberWithInteger: button.tag We replaced NSNumber numberWithInteger: button.tag with @(button.tag)
-        
-        
     }
     [listItemField resignFirstResponder];
     
@@ -183,11 +198,28 @@
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
+    [cell resetLayout];
+    
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
+    
+    cell.delegate = self;
+    
     NSDictionary * listItem = listItems[indexPath.row];
     
 //    cell.backgroundColor = priorityColors[[listItem[@"priority"] intValue]];
 
     cell.bgView.backgroundColor = priorityColors[[listItem [@"priority"] intValue]];
+    
+    if([listItem[@"priority"] intValue] == 0)
+    {
+        cell.strikeThrough.alpha = 1;
+        cell.circleButton.alpha = 0;}
+    else {
+        cell.strikeThrough.alpha = 0;
+        cell.circleButton.alpha = 1;
+    }
+    
+        
     cell.nameLabel.text = listItem[@"name"];
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeCell:)];
@@ -203,21 +235,128 @@
     return cell;
 }
 
-- (void) swipeCell: (UISwipeGestureRecognizer *)gesture
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // get cell from tableView at row
+    TDLTableViewCell *cell = (TDLTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    NSDictionary * listItem = listItems[indexPath.row];
+    
+    if (cell.swiped) return;
+    
+    // NSInteger * index = [self.tableView indexPathForCell:cell].row;
+    
+    // if(slid over) return;
+    
+    // set cell background to the done color
+    cell.bgView.backgroundColor = priorityColors[0];
+    cell.strikeThrough.alpha = 1;
+    cell.circleButton.alpha = 0; 
+    
+    //create new dictionary with the done priority
+   
+    NSDictionary * updateListItem = listItem;
+    
+    if  ([listItem[@"priority"] intValue])
+    {
+        cell.bgView.backgroundColor = priorityColors [0];
+        cell.strikeThrough.alpha = 1;
+        cell.circleButton.alpha = 0;
+        updateListItem = @{
+                           @"name": listItem [@"name"],
+                           @"priority" :@0,
+                           @"constant" : listItem [@"constant"]
+                           };
+    }
+    
+else
+{
+        cell.bgView.backgroundColor = priorityColors[[listItems [indexPath.row][@"constant"] intValue]];
+        cell.strikeThrough.alpha = 0;
+        cell.circleButton.alpha = 1;
+        //create new dictionary with the done priority
+    
+    updateListItem = @{
+                                          @"name": listItem [@"name"],
+                                          @"priority" :listItem [@"constant"],
+                                          @"constant" : listItem [@"constant"]
+                                          };
+    
+        NSLog(@"working");
+    
+       
+    }
+    
+    // remove old dictionary for cell
+    [listItems removeObjectAtIndex:indexPath.row];
+    
+    // add new dictionary for cell
+    [listItems insertObject: updateListItem atIndex:indexPath.row];
+    
+    
+}
+
+
+- (void)swipeCell:(UISwipeGestureRecognizer *)gesture
 {
     NSLog(@"%@", gesture);
     
-    switch (gesture.direction) {
-        case 1: //right
-            NSLog(@"swiping right");
-            
+    TDLTableViewCell * cell = (TDLTableViewCell *)gesture.view;
+    
+    NSInteger index = [self.tableView indexPathForCell:cell].row;
+    
+    NSDictionary * listItem = listItems[index];
+    
+    // if gesture.direction == left : then 2 (if you swipe left then swipe equals 2)
+    // if gesture.direction == right : then 1 (if you swipe right then swipe equals 1)
+    // if gesture.direction == left && the priority == 0(strikethrough) : then 12
+    // if gesture.direction == right && the priority == 0(strikethrough) : then 11
+    
+    int completed;
+//    if([listItem[@"priority"] intValue] == 0)
+//    {
+//        completed = 1;
+//    }
+//    else
+//    { completed = 0;
+//    }
+//    
+    
+    completed = ([listItem[@"priority"] intValue] == 0) ? 10 : 0;
+    
+    switch (gesture.direction + completed)
+    
+    {
+       case 1: //right
+//            NSLog(@"swiping right");
+            [MOVE animateView:cell.bgView properties:@{@"x": @10, @"duration" : @.5}];
+            [cell hideCircleButtons];
+            cell.swiped = NO;
             break;
-        case 2: //left
-            NSLog(@"swiping left");
             
-        default:
+      case 2: //left
+//            NSLog(@"swiping left");
+            [MOVE animateView:cell.bgView properties:@{@"x" : @-140, @"duration" : @.5}];
+            [cell showCircleButtons];
+            cell.swiped = YES;
             break;
+            
+            case 11:
+            [MOVE animateView:cell.bgView properties:@{@"x": @10, @"duration" : @.5}];
+            [cell hideDeleteButton];
+            cell.swiped = NO;
+            break;
+            
+            case 12:
+            [MOVE animateView:cell.bgView properties:@{@"x" : @-40, @"duration" : @.5}];
+            [cell showDeleteButton];
+            cell.swiped = YES;
+            break;
+            
     }
+    
+
     
     //swipe right to show feed options
     //NFeedCell *view = (NFeedCell *) [[gesture view] viewWithTag: 100];

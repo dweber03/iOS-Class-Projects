@@ -21,6 +21,7 @@
 		662C84ED18F44A6800A2A2AA /* ToDo2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C84EC18F44A6800A2A2AA /* ToDo2Tests.m */; };
 		662C84F818F44AB700A2A2AA /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C84F718F44AB700A2A2AA /* TDLTableViewController.m */; };
 		662C84FB18F4829100A2A2AA /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C84FA18F4829100A2A2AA /* TDLTableViewCell.m */; };
+		662C84FE18F5D4C300A2A2AA /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C84FD18F5D4C300A2A2AA /* MOVE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		662C84F718F44AB700A2A2AA /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
 		662C84F918F4829100A2A2AA /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
 		662C84FA18F4829100A2A2AA /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
+		662C84FC18F5D4C300A2A2AA /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		662C84FD18F5D4C300A2A2AA /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		662C84BB18F44A6800A2A2AA = {
 			isa = PBXGroup;
 			children = (
+				662C84FC18F5D4C300A2A2AA /* MOVE.h */,
+				662C84FD18F5D4C300A2A2AA /* MOVE.m */,
 				662C84F918F4829100A2A2AA /* TDLTableViewCell.h */,
 				662C84FA18F4829100A2A2AA /* TDLTableViewCell.m */,
 				662C84F618F44AB700A2A2AA /* TDLTableViewController.h */,
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662C84FE18F5D4C300A2A2AA /* MOVE.m in Sources */,
 				662C84FB18F4829100A2A2AA /* TDLTableViewCell.m in Sources */,
 				662C84F818F44AB700A2A2AA /* TDLTableViewController.m in Sources */,
 				662C84D418F44A6800A2A2AA /* main.m in Sources */,
