@@ -8,7 +8,7 @@
 
 #import "SCGStageVC.h"
 
-#import "SCGSquare.h" 
+#import "SCGSquare.h"
 
 
 //@interface SCGStageVC ()
@@ -27,6 +27,10 @@
     
     UIView * gameBoard;
     
+    UIButton * newGame;
+    
+    UIButton * homeButton;
+    
     NSArray * gameSizes;
     
 }
@@ -42,72 +46,39 @@
         tappedDots = [@{} mutableCopy];
         allSquares = [@{} mutableCopy];
         gameSizes = @[@"4",@"8",@"12",@"16"];
-                      
+        
         
     }
     return self;
 }
-//
-//- (void) resetGame
-//{
-//    {
-//       
-//        gameSize = [gameSizes[0] intValue];
-//        
-//        float circleWidth = SCREEN_WIDTH / gameSize;
-//        float squareWidth = circleWidth / 2;
-//        
-//        
-//        
-//        for (int sRow = 0; sRow < gameSize - 1; sRow++)
-//        {
-//            for (int sCol = 0; sCol < gameSize - 1; sCol++)
-//            {
-//                float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
-//                float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
-//                
-//                SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
-//                square.backgroundColor = [UIColor lightGrayColor];
-//                
-//                NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow];
-//                allSquares[key] = square;
-//                
-//                [self.view addSubview:square];
-//                
-//            }
-//        }
-//        
-//        for (int row = 0; row < gameSize; row++)
-//        {
-//            
-//            for (int col = 0; col < gameSize; col++)
-//                
-//            {
-//                float circleX = circleWidth * col;
-//                float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
-//                
-//                SCGCircle * circle = [[SCGCircle alloc] initWithFrame: (CGRectMake(circleX, circleY, circleWidth, circleWidth))];
-//                
-//                circle.position = (CGPoint){col,row};
-//                
-//                circle.delegate = self;
-//                
-//                NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row];
-//                tappedDots [key] = @2;
-//                
-//                [self.view addSubview: circle];
-//                
-//            }
-//        }
-//    }
-//}
-- (void)viewDidLoad
+
+
+-(void)goHome
 {
-    [super viewDidLoad];
+    [gameBoard removeFromSuperview];
+    [homeButton removeFromSuperview];
+    [self.view addSubview: newGame];
+}
+- (void) resetGame
+{
+    [newGame removeFromSuperview];
+
     
     {
-        gameSize = [gameSizes[0] intValue];
         
+        
+        gameSize = 8;
+        
+        homeButton = [[UIButton alloc] initWithFrame:CGRectMake(240, 400, 60, 60)];
+        
+        [homeButton setTitle:@"Home" forState:UIControlStateNormal];
+        [homeButton addTarget:self action:@selector(goHome) forControlEvents:UIControlEventTouchUpInside];
+        homeButton.backgroundColor = [UIColor blueColor];
+        homeButton.layer.cornerRadius = 30;
+        [self.view insertSubview:gameBoard belowSubview:homeButton];
+        
+        [self.view addSubview:homeButton];
+
         float circleWidth = SCREEN_WIDTH / gameSize;
         float squareWidth = circleWidth / 2;
         
@@ -122,11 +93,12 @@
                 
                 SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
                 square.backgroundColor = [UIColor lightGrayColor];
+                square.layer.cornerRadius = 5;
                 
                 NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow];
                 allSquares[key] = square;
                 
-                [self.view addSubview:square];
+                [gameBoard addSubview:square];
                 
             }
         }
@@ -149,36 +121,47 @@
                 NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row];
                 tappedDots [key] = @2;
                 
-                [self.view addSubview: circle];
+                [gameBoard addSubview: circle];
                 
             }
         }
     }
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     
-//    UIView * gameBoard = [[[UIView alloc] initWithFrame:(CGRect)];
-//                          
-//    [self.view addSubview: gameBoard];
-    
-                          
-    
-    
+    {
+        newGame = [[UIButton alloc] initWithFrame:CGRectMake(240, 400, 60, 60)];
+        
+        [newGame setTitle:@"Start" forState:UIControlStateNormal];
+        [newGame addTarget:self action:@selector(resetGame) forControlEvents:UIControlEventTouchUpInside];
+        newGame.backgroundColor = [UIColor blueColor];
+        newGame.layer.cornerRadius = 30;
+        
+        gameBoard = [[UIView alloc] initWithFrame:self.view.frame];
+        
+        [self.view addSubview: newGame];
+        //        [self.view addSubview: gameBoard];
+        
+    }
 }
 -(UIColor *) circleTappedWithPosition: (CGPoint)position
 {
-//    if([self checkForSquareAroundPosition:position]) return nil;
+    //    if([self checkForSquareAroundPosition:position]) return nil;
     
     // get tappedDots key from position
     NSString * key = [NSString stringWithFormat:@"c%dr%d", (int)position.x, (int)position.y];
-
+    
     //set player num to value in tappedDots
     tappedDots[key] = @(playerTurn);
     
     //check for square
     [self checkForSquareAroundPosition:position];
-
     
     
-
+    
+    
     UIColor * currentColor = playerColors[playerTurn];
     
     
@@ -189,15 +172,15 @@
 
 -(void)checkForSquareAroundPosition: (CGPoint)position
 {
-//    tappedDots = @{
-//      @"r0c0": @0,
-//      @"r0c1": @1,
-//      @"r0c2": @2};
+    //    tappedDots = @{
+    //      @"r0c0": @0,
+    //      @"r0c1": @1,
+    //      @"r0c2": @2};
     
-//    NSString * key = [self formatKeyWithPosition: position];
+    //    NSString * key = [self formatKeyWithPosition: position];
     
     
-//    if([tappedDots[key] isEqualToValue:@(playerTurn)]) return YES;
+    //    if([tappedDots[key] isEqualToValue:@(playerTurn)]) return YES;
     
     int pX = position.x;
     int pY = position.y;
@@ -262,7 +245,7 @@
             
         }
     }
-
+    
     
     
     if (below && left)
@@ -318,14 +301,14 @@
             
         }
     }
-
+    
     
     
 }
 
 //- (BOOL)checkQuadrantForPosition:(CGPoint)position
 //{
-//    
+//
 //}
 
 - (void)didReceiveMemoryWarning
@@ -335,15 +318,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (BOOL) prefersStatusBarHidden
 {
