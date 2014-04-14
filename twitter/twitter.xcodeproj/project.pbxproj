@@ -19,6 +19,7 @@
 		660033E018F9D0FF00B90787 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660033C818F9D0FF00B90787 /* UIKit.framework */; };
 		660033E818F9D0FF00B90787 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 660033E618F9D0FF00B90787 /* InfoPlist.strings */; };
 		660033EA18F9D0FF00B90787 /* twitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660033E918F9D0FF00B90787 /* twitterTests.m */; };
+		660E450318FAFB9D007A26BB /* TWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E450218FAFB9D007A26BB /* TWPRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		660033E518F9D0FF00B90787 /* twitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "twitterTests-Info.plist"; sourceTree = "<group>"; };
 		660033E718F9D0FF00B90787 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		660033E918F9D0FF00B90787 /* twitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = twitterTests.m; sourceTree = "<group>"; };
+		660E450118FAFB9D007A26BB /* TWPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPRootViewController.h; sourceTree = "<group>"; };
+		660E450218FAFB9D007A26BB /* TWPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		660033B818F9D0FF00B90787 = {
 			isa = PBXGroup;
 			children = (
+				660E44FD18FAF5CC007A26BB /* Controllers */,
 				660033CA18F9D0FF00B90787 /* twitter */,
 				660033E318F9D0FF00B90787 /* twitterTests */,
 				660033C318F9D0FF00B90787 /* Frameworks */,
@@ -142,6 +146,15 @@
 				660033E618F9D0FF00B90787 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		660E44FD18FAF5CC007A26BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				660E450118FAFB9D007A26BB /* TWPRootViewController.h */,
+				660E450218FAFB9D007A26BB /* TWPRootViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660E450318FAFB9D007A26BB /* TWPRootViewController.m in Sources */,
 				660033D518F9D0FF00B90787 /* TWPAppDelegate.m in Sources */,
 				660033D118F9D0FF00B90787 /* main.m in Sources */,
 			);
@@ -442,6 +456,7 @@
 				660033EF18F9D0FF00B90787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		660033F018F9D0FF00B90787 /* Build configuration list for PBXNativeTarget "twitterTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +465,7 @@
 				660033F218F9D0FF00B90787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

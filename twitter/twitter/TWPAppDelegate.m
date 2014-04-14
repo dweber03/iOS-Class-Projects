@@ -8,15 +8,23 @@
 
 #import "TWPAppDelegate.h"
 
+#import "TWPRootViewController.h"
+
 @implementation TWPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    TWPRootViewController * rootViewController = [[TWPRootViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController * navContoller = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    self.window.rootViewController = navContoller;
+    
+    self.window.rootViewController = [[TWPRootViewController alloc] initWithStyle:UITableViewStylePlain];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+    [self.window makeKeyAndVisible]; 
+    
+    return YES; 
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
