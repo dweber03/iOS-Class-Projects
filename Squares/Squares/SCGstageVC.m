@@ -25,6 +25,10 @@
     
     NSMutableDictionary * allSquares;
     
+    UIView * gameBoard;
+    
+    NSArray * gameSizes;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,66 +41,132 @@
         
         tappedDots = [@{} mutableCopy];
         allSquares = [@{} mutableCopy];
+        gameSizes = @[@"4",@"8",@"12",@"16"];
+                      
         
     }
     return self;
 }
-
+//
+//- (void) resetGame
+//{
+//    {
+//       
+//        gameSize = [gameSizes[0] intValue];
+//        
+//        float circleWidth = SCREEN_WIDTH / gameSize;
+//        float squareWidth = circleWidth / 2;
+//        
+//        
+//        
+//        for (int sRow = 0; sRow < gameSize - 1; sRow++)
+//        {
+//            for (int sCol = 0; sCol < gameSize - 1; sCol++)
+//            {
+//                float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
+//                float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+//                
+//                SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
+//                square.backgroundColor = [UIColor lightGrayColor];
+//                
+//                NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow];
+//                allSquares[key] = square;
+//                
+//                [self.view addSubview:square];
+//                
+//            }
+//        }
+//        
+//        for (int row = 0; row < gameSize; row++)
+//        {
+//            
+//            for (int col = 0; col < gameSize; col++)
+//                
+//            {
+//                float circleX = circleWidth * col;
+//                float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+//                
+//                SCGCircle * circle = [[SCGCircle alloc] initWithFrame: (CGRectMake(circleX, circleY, circleWidth, circleWidth))];
+//                
+//                circle.position = (CGPoint){col,row};
+//                
+//                circle.delegate = self;
+//                
+//                NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row];
+//                tappedDots [key] = @2;
+//                
+//                [self.view addSubview: circle];
+//                
+//            }
+//        }
+//    }
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    gameSize = 4;
-    
-    float circleWidth = SCREEN_WIDTH / gameSize;
-    float squareWidth = circleWidth / 2;
-    
-
-    
-    for (int sRow = 0; sRow < gameSize - 1; sRow++)
     {
-        for (int sCol = 0; sCol < gameSize - 1; sCol++)
-        {
-            float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
-            float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
-            
-            SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
-            square.backgroundColor = [UIColor lightGrayColor];
-            
-            NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow];
-            allSquares[key] = square;
-
-            [self.view addSubview:square];
-            
-        }
-    }
-    
-    for (int row = 0; row < gameSize; row++)
-    {
-            
-        for (int col = 0; col < gameSize; col++)
+        gameSize = [gameSizes[0] intValue];
         
+        float circleWidth = SCREEN_WIDTH / gameSize;
+        float squareWidth = circleWidth / 2;
+        
+        
+        
+        for (int sRow = 0; sRow < gameSize - 1; sRow++)
         {
-            float circleX = circleWidth * col;
-            float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+            for (int sCol = 0; sCol < gameSize - 1; sCol++)
+            {
+                float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
+                float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
                 
-            SCGCircle * circle = [[SCGCircle alloc] initWithFrame: (CGRectMake(circleX, circleY, circleWidth, circleWidth))];
-
-            circle.position = (CGPoint){col,row};
+                SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
+                square.backgroundColor = [UIColor lightGrayColor];
                 
-            circle.delegate = self;
+                NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow];
+                allSquares[key] = square;
                 
-            NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row];
-            tappedDots [key] = @2;
+                [self.view addSubview:square];
                 
-            [self.view addSubview: circle];
+            }
+        }
+        
+        for (int row = 0; row < gameSize; row++)
+        {
             
+            for (int col = 0; col < gameSize; col++)
+                
+            {
+                float circleX = circleWidth * col;
+                float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+                
+                SCGCircle * circle = [[SCGCircle alloc] initWithFrame: (CGRectMake(circleX, circleY, circleWidth, circleWidth))];
+                
+                circle.position = (CGPoint){col,row};
+                
+                circle.delegate = self;
+                
+                NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row];
+                tappedDots [key] = @2;
+                
+                [self.view addSubview: circle];
+                
+            }
         }
     }
+    
+//    UIView * gameBoard = [[[UIView alloc] initWithFrame:(CGRect)];
+//                          
+//    [self.view addSubview: gameBoard];
+    
+                          
+    
+    
 }
-
 -(UIColor *) circleTappedWithPosition: (CGPoint)position
 {
+//    if([self checkForSquareAroundPosition:position]) return nil;
+    
     // get tappedDots key from position
     NSString * key = [NSString stringWithFormat:@"c%dr%d", (int)position.x, (int)position.y];
 
@@ -123,6 +193,11 @@
 //      @"r0c0": @0,
 //      @"r0c1": @1,
 //      @"r0c2": @2};
+    
+//    NSString * key = [self formatKeyWithPosition: position];
+    
+    
+//    if([tappedDots[key] isEqualToValue:@(playerTurn)]) return YES;
     
     int pX = position.x;
     int pY = position.y;
@@ -163,21 +238,95 @@
     
     if (above && right)
     {
-        
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
+            
+            // -1,-1; 0,-1; -1,0; 0,0
+            
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY-1];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY];
+            
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+            
+            if (topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue: @(player)])
+            {
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                currentSquare.backgroundColor = color;
+            }
+            
+        }
     }
+
+    
     
     if (below && left)
     {
-        
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
+            
+            // -1,-1; 0,-1; -1,0; 0,0
+            
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY+1];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY+1];
+            
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+            
+            if (topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue: @(player)])
+            {
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                currentSquare.backgroundColor = color;
+            }
+            
+        }
     }
     
     if (below && right)
     {
-    
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
+            
+            // -1,-1; 0,-1; -1,0; 0,0
+            
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY+1];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY+1];
+            
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+            
+            if (topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue: @(player)])
+            {
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                currentSquare.backgroundColor = color;
+            }
+            
+        }
     }
+
     
     
 }
+
+//- (BOOL)checkQuadrantForPosition:(CGPoint)position
+//{
+//    
+//}
 
 - (void)didReceiveMemoryWarning
 {

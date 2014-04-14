@@ -39,36 +39,36 @@
             @"in_reply_to_status_id": @"454805152306696200",
             @"in_reply_to_status_id_str": @"454805152306696193",
             @"in_reply_to_user_id": @"2435447227",
-            "in_reply_to_user_id_str": "2435447227",
-            "in_reply_to_screen_name": "foxjon123",
-            "user":  {
-                "id": 18487945,
-                "id_str": "18487945",
-                "name": "Jo Albright",
-                "screen_name": "Joalbright",
-                "location": "",
-                "description": "Co-Founder & iOS Developer for HighFive | iOS Instructor @TheIronYard",
-                "url": "http://t.co/0j8pzmKFox",
-                "entities":  {
-                    "url":  {
-                        "urls":  [
+            @"in_reply_to_user_id_str": @"2435447227",
+            @"in_reply_to_screen_name": @"foxjon123",
+            @"user":  {
+                @"id": @"18487945",
+                @"id_str": @"18487945",
+                @"name": @"Jo Albright",
+                @"screen_name": @"Joalbright",
+                @"location": "",
+                @"description": @"Co-Founder & iOS Developer for HighFive | iOS Instructor @TheIronYard",
+                @"url": @"http://t.co/0j8pzmKFox",
+                @"entities":  {
+                    @"url":  {
+                        @"urls":  [
                                   {
-                                      "url": "http://t.co/0j8pzmKFox",
-                                      "expanded_url": "http://jo2.co",
-                                      "display_url": "jo2.co",
-                                      "indices":  [
+                                      @"url": @"http://t.co/0j8pzmKFox",
+                                      @"expanded_url": @"http://jo2.co",
+                                      @"display_url": @"jo2.co",
+                                      @"indices":  [
                                                    0,
                                                    22
                                                    ]
                                   }
                                   ]
                     },
-                    "description":  {
-                        "urls":  []
+                    @"description":  {
+                        @"urls":  []
                     }
                 },
-                "protected": @"false",
-                "followers_count": 207,
+                @"protected": @"NO",
+                @"followers_count": 207,
                 "friends_count": 313,
                 "listed_count": 12,
                 "created_at": "Tue Dec 30 20:46:32 +0000 2008",
@@ -152,7 +152,9 @@
             "retweeted": false,
             "lang": "en"
         }] mutableCopy];
-        [self loadListItems];
+    
+        [self loadtweets];
+    
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
         header.backgroundColor = [UIColor darkGrayColor];

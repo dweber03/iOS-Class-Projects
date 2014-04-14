@@ -11,6 +11,7 @@
 @implementation SCGCircle
 {
     UIColor * dotColor;
+    float dotWidth;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -21,7 +22,8 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-        dotColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        dotColor = [UIColor colorWithRed:0.8 green: 0.1 blue: 0.1  alpha:0.5];
+        dotWidth= frame.size.width / 5;
     }
     return self;
 }
@@ -37,14 +39,15 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     [dotColor set];
-    float dotXY = (self.frame.size.width - 20) / 2;
-    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, 20, 20));
+    float dotXY = (self.frame.size.width - dotWidth) / 2;
+    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, dotWidth, dotWidth));
     CGContextFillPath(context);
     
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+
 //    asks for color from VC while giving the position of tapped circle
     dotColor = [self.delegate circleTappedWithPosition:self.position];
     
