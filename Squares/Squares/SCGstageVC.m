@@ -75,6 +75,10 @@
         [homeButton addTarget:self action:@selector(goHome) forControlEvents:UIControlEventTouchUpInside];
         homeButton.backgroundColor = [UIColor blueColor];
         homeButton.layer.cornerRadius = 30;
+        
+        gameBoard = [[UIView alloc] initWithFrame:self.view.frame];
+        
+        
         [self.view insertSubview:gameBoard belowSubview:homeButton];
         
         [self.view addSubview:homeButton];
@@ -139,10 +143,9 @@
         newGame.backgroundColor = [UIColor blueColor];
         newGame.layer.cornerRadius = 30;
         
-        gameBoard = [[UIView alloc] initWithFrame:self.view.frame];
+        
         
         [self.view addSubview: newGame];
-        //        [self.view addSubview: gameBoard];
         
     }
 }
