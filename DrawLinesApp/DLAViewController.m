@@ -18,10 +18,15 @@
 
 @implementation DLAViewController
 {
-//    UIButton * colorButton;
+    //    UIButton * colorButton;
     DLAStageScribble * scribbleView;
     
     UIView * colorDrawer;
+    
+    float lineWidth;
+    UIColor * lineColor;
+    
+   
     
 }
 
@@ -31,8 +36,9 @@
     if (self) {
         // Custom initialization
         
-//        self.view = [[DLAStageLines alloc] initWithFrame:self.view.frame];
-//        self.view = [[DLAStageScribble alloc] initWithFrame:self.view.frame]; 
+        //        self.view = [[DLAStageLines alloc] initWithFrame:self.view.frame];
+        //        self.view = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+        
         
     }
     return self;
@@ -43,15 +49,24 @@
 {
     [super viewDidLoad];
     
-    scribbleView = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+//    scribbleView = [[DLAStageLines alloc] initWithFrame:self.view.frame];
     
-//    scribbleView.lineColor = [UIColor blueColor];
+    //    scribbleView.lineColor = [UIColor blueColor];
+    
+    lineColor = [UIColor colorWithRed:0.251f green:0.251f blue:0.251f alpha:1.0f];
+    lineWidth = 5.0;
+
+    [self toggleStage];
     
     [self.view addSubview:scribbleView];
     
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT - 60, 280, 40)];
+    slider.transform = CGAffineTransformMakeRotation(-90 * M_PI / 180);
+    slider.frame = CGRectMake(SCREEN_WIDTH - 43, SCREEN_HEIGHT - 300, 23, 280);
     slider.maximumValue = 20.0;
     slider.minimumValue = 2.0;
+    
+    slider.value = lineWidth;
     
     [slider addTarget:self action:@selector(changeSize:) forControlEvents:UIControlEventAllEvents];
     
@@ -78,40 +93,84 @@
         
         [button addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
         [colorDrawer addSubview:button];
+        [self.view addSubview:colorDrawer];
     }
     
-    [self.view addSubview:colorDrawer];
+    
+    
+    UIButton * toggleButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 50, 50, 50)];
+    toggleButton.backgroundColor = [UIColor orangeColor];
+    [toggleButton addTarget:self action:@selector(toggleStage) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:toggleButton];
+    
+
+    
+    UIButton * undoButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 120, 50, 50, 50)];
+    undoButton.backgroundColor = [UIColor lightGrayColor];
+    [undoButton addTarget:self action:@selector(undoStage) forControlEvents:UIControlEventTouchUpInside];
+    [undoButton setTitle:@"undo" forState:UIControlStateNormal];
+    [self.view addSubview:undoButton];
+    
+
+    UIButton * clearButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 60, 50, 50, 50)];
+    clearButton.backgroundColor = [UIColor redColor];
+    [clearButton addTarget:self action:@selector(clearStage) forControlEvents:UIControlEventTouchUpInside];
+    [clearButton setImage:[UIImage imageNamed:@"Delete"] forState:UIControlStateNormal];
+    
+    [self.view addSubview:clearButton];
+}
+
+-(void) undoStage
+{
+    [scribbleView undoStage];
+}
+
+-(void) clearStage
+{
+    [scribbleView clearStage];
+}
+
+- (void) toggleStage
+{
+    NSMutableArray * lines = scribbleView.lines;
+    
+    [scribbleView removeFromSuperview];
+    
+    if ([scribbleView isMemberOfClass:[DLAStageScribble class]])
+    {
+        scribbleView = [[DLAStageLines alloc] initWithFrame:self.view.frame];
+    } else {
+        scribbleView = [[DLAStageScribble alloc]initWithFrame:self.view.frame];
+    }
+    
+    scribbleView.lineWidth = lineWidth;
+    scribbleView.lineColor = lineColor;
+    
+    if(lines != nil) scribbleView.lines = lines; 
+    
+    [self.view insertSubview:scribbleView atIndex:0];
     
 }
 
 -(void)changeSize:(UISlider *)sender
 {
-    scribbleView.lineWidth = sender.value;
+    lineWidth = sender.value;
+
+    scribbleView.lineWidth = lineWidth;
+    
 }
 
 - (void) changeColor: (UIButton *)sender
 {
-    scribbleView.lineColor = sender.backgroundColor;
+    lineColor = sender.backgroundColor;
+
+    scribbleView.lineColor = lineColor;
 }
 
 - (BOOL) prefersStatusBarHidden {return YES; }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

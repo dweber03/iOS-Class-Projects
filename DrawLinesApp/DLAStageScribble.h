@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol DLAStageDelegate;
+
+
 @interface DLAStageScribble : UIView
 
 @property (nonatomic) float lineWidth;
 @property (nonatomic) UIColor * lineColor;
+@property (nonatomic) NSMutableArray * lines; 
+
+-(void) clearStage;
+-(void) undoStage;
+
 //@property (nonatomic) UIButton * newColor;
 
 

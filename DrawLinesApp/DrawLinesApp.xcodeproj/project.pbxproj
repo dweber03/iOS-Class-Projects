@@ -22,6 +22,7 @@
 		664E67BF18FD679900849383 /* DLAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E67BE18FD679900849383 /* DLAViewController.m */; };
 		664E67C218FD69B500849383 /* DLAStageLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E67C118FD69B500849383 /* DLAStageLines.m */; };
 		664E67C518FD7DA700849383 /* DLAStageScribble.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E67C418FD7DA700849383 /* DLAStageScribble.m */; };
+		668BEA1D18FF037D009A7AF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 668BEA1C18FF037D009A7AF2 /* Delete.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		664E67C118FD69B500849383 /* DLAStageLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageLines.m; sourceTree = "<group>"; };
 		664E67C318FD7DA700849383 /* DLAStageScribble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLAStageScribble.h; sourceTree = "<group>"; };
 		664E67C418FD7DA700849383 /* DLAStageScribble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageScribble.m; sourceTree = "<group>"; };
+		668BEA1C18FF037D009A7AF2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		664E678218FD673000849383 = {
 			isa = PBXGroup;
 			children = (
+				668BEA1C18FF037D009A7AF2 /* Delete.png */,
 				664E67C318FD7DA700849383 /* DLAStageScribble.h */,
 				664E67C418FD7DA700849383 /* DLAStageScribble.m */,
 				664E67C018FD69B500849383 /* DLAStageLines.h */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668BEA1D18FF037D009A7AF2 /* Delete.png in Resources */,
 				664E679918FD673000849383 /* InfoPlist.strings in Resources */,
 				664E67A118FD673000849383 /* Images.xcassets in Resources */,
 			);
@@ -456,6 +460,7 @@
 				664E67B918FD673000849383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		664E67BA18FD673000849383 /* Build configuration list for PBXNativeTarget "DrawLinesAppTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +469,7 @@
 				664E67BC18FD673000849383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
