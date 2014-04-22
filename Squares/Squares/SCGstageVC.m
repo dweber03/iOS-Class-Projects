@@ -67,7 +67,7 @@
     {
         
         
-        gameSize = 8;
+        gameSize = 4;
         
         homeButton = [[UIButton alloc] initWithFrame:CGRectMake(240, 400, 60, 60)];
         

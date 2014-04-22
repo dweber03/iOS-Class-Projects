@@ -37,7 +37,7 @@
 {
     float paddleWidth;
     float points;
-//    int ballCount;
+    int lives;
     
 }
 
@@ -52,7 +52,7 @@
         
         paddleWidth = 80;
         
-//        ballCount = 3;
+        lives = 3;
         
         
         self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
@@ -79,15 +79,15 @@
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     [self createPaddle];
-    [self createBall];
     [self createBricks];
     
     self.collider = [[UICollisionBehavior alloc] initWithItems:[self allItems]];
     
     self.collider.collisionDelegate = self;
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
-    self.collider.translatesReferenceBoundsIntoBoundary = YES;
+//    self.collider.translatesReferenceBoundsIntoBoundary = YES;
     
+    [self createBall];
     
     int w = self.view.frame.size.width;
     int h = self.view.frame.size.height;
@@ -160,7 +160,16 @@
             
         }
     }
-    if(tempBrick != nil) [self.bricks removeObjectIdenticalTo:tempBrick];
+    if(tempBrick != nil)
+    {
+        [self.bricks removeObjectIdenticalTo:tempBrick];
+        
+        if ([self.bricks count] == 0) {
+            
+            [self.delegate gameDone];
+            
+        }
+    }
     
     
 }
@@ -178,13 +187,22 @@
         UIView * ball = (UIView *)item;
         [ball removeFromSuperview];
         [self.collider removeItem:ball];
-//        ballCount -=1;
-//        self.createBall; 
+
         
+        lives--;
         
-        if ([self.delegate respondsToSelector:@selector(gameDone)])
-            [self.delegate gameDone]; 
-        
+        if (lives > 0)
+        {
+            
+            [self createBall];
+        } else {
+            if ([self.delegate respondsToSelector:@selector(gameDone)])
+            {
+                [self.delegate gameDone];
+            }
+
+        }
+
         
     }
 }
@@ -223,7 +241,7 @@
 {
     NSMutableArray * items = [@[self.paddle] mutableCopy];
     
-    for (UIView * item in self.balls) [items addObject:item];
+//    for (UIView * item in self.balls) [items addObject:item];
     for (UIView * item in self.bricks) [items addObject:item];
     
     return items;
@@ -232,8 +250,8 @@
 
 -(void)createBricks
 {
-    int brickCols = 8;
-    int brickRows = 4;
+    int brickCols = 4;
+    int brickRows = 2;
     
     float brickWidth = (SCREEN_WIDTH - (10 * (brickCols +1))) / brickCols;
     float brickHeight = 20;
@@ -281,8 +299,11 @@
     
     [self.balls addObject: ball];
     
+    [self.collider addItem:ball];
+    [self.ballsDynamicProperties addItem:ball];
+    
     self.pusher = [[UIPushBehavior alloc] initWithItems:self.balls mode:UIPushBehaviorModeInstantaneous];
-    self.pusher.pushDirection = CGVectorMake(0.05, 0.05);
+    self.pusher.pushDirection = CGVectorMake(0.015, -0.015);
     self.pusher.active = YES;
     [self.animator addBehavior:self.pusher];
 }

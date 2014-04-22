@@ -18,6 +18,9 @@
     BBALevelController * level;
     UIButton * startButton;
     UILabel * score;
+    int lives;
+    UILabel * gameLives;
+    
 }
 
 
@@ -38,12 +41,15 @@
         score = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 280, SCREEN_HEIGHT - 300)];
         score.backgroundColor = [UIColor blackColor];
         
-        [self.view addSubview:score];
+        
     }
     return self;
 }
 
-
+- (void)startGame
+{
+    lives = 3;
+}
 
 - (void)resetLevel
 {
@@ -52,7 +58,8 @@
     level.delegate = self;
     level.view.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
     level.view.backgroundColor = [UIColor blueColor];
-
+    
+    [self.view addSubview:score];
     [self.view addSubview:level.view];
     [level resetLevel];
 }
@@ -60,6 +67,7 @@
 -(void)gameDone
 {
     [level.view removeFromSuperview];
+    [score removeFromSuperview];
     [self.view addSubview:startButton];
     
 }
@@ -67,20 +75,45 @@
 -(void)addPoints:(int)points
 {
     score.text = [NSString stringWithFormat:@"%d", points];
-    score.backgroundColor = [UIColor greenColor];
+    score.textColor = [UIColor blueColor];
     
     NSLog(@"Total points = %d", points);
 
+    
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    gameLives = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 280, 0, SCREEN_WIDTH - 280, SCREEN_HEIGHT - 300)];
+    gameLives.backgroundColor = [UIColor blackColor];
+    gameLives.textColor = [UIColor whiteColor];
     
     
+    
+//    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//    topScore = [[userDefaults objectForKey:@"topScore"] intValue];
+//    
 
 }
 
+-(void)updatePoints: (int)points
+{
+//    score = points;
+    
+//    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:@(topScore) forKey:@"topScore"];
+//    [userDefaults synchronize];
+//    
+    
+    // synchronize saves the userDefaults & "topScore"
+}
+
+-(int)loseLife
+{
+    if (lives > 0) lives--;
+    return lives;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
