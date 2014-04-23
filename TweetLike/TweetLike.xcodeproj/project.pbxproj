@@ -23,6 +23,7 @@
 		66F223E01907F77700AE4EE8 /* TLATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F223DF1907F77700AE4EE8 /* TLATableViewCell.m */; };
 		66F223E2190802C500AE4EE8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F223E1190802C500AE4EE8 /* heart.png */; };
 		66F223E8190818A800AE4EE8 /* TLANavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F223E7190818A800AE4EE8 /* TLANavController.m */; };
+		66FF5FFA1908385400FD1448 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 66FF5FF91908385400FD1448 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		66F223E1190802C500AE4EE8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../../../Downloads/heart.png; sourceTree = "<group>"; };
 		66F223E6190818A800AE4EE8 /* TLANavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLANavController.h; sourceTree = "<group>"; };
 		66F223E7190818A800AE4EE8 /* TLANavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLANavController.m; sourceTree = "<group>"; };
+		66FF5FF91908385400FD1448 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		66F223A01907F64800AE4EE8 = {
 			isa = PBXGroup;
 			children = (
+				66FF5FF91908385400FD1448 /* logo.png */,
 				66F223E6190818A800AE4EE8 /* TLANavController.h */,
 				66F223E7190818A800AE4EE8 /* TLANavController.m */,
 				66F223E1190802C500AE4EE8 /* heart.png */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66FF5FFA1908385400FD1448 /* logo.png in Resources */,
 				66F223B71907F64800AE4EE8 /* InfoPlist.strings in Resources */,
 				66F223E2190802C500AE4EE8 /* heart.png in Resources */,
 				66F223BF1907F64800AE4EE8 /* Images.xcassets in Resources */,
@@ -460,6 +464,7 @@
 				66F223D71907F64800AE4EE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66F223D81907F64800AE4EE8 /* Build configuration list for PBXNativeTarget "TweetLikeTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +473,7 @@
 				66F223DA1907F64800AE4EE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
