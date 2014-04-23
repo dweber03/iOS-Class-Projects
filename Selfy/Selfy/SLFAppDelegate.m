@@ -8,6 +8,9 @@
 
 #import "SLFAppDelegate.h"
 #import "SLFTableViewController.h"
+#import <Parse/Parse.h>
+#import "SLFViewController.h"
+#import "SLFSelfyViewController.h"
 
 
 @implementation SLFAppDelegate
@@ -15,8 +18,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.rootViewController = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    [Parse setApplicationId:@"H1JHLiA7kFRmIWvtbkHDcnA1Caj4UofHxRx6UZAB"
+                  clientKey:@"dKLyXccYHUy1MXNgrdR2Sq5b1fNQoTr4clSXVd3p"];
+    
+    [PFUser enableAutomaticUser];
+    
+//    self.window.rootViewController = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    self.window.rootViewController = [[SLFViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

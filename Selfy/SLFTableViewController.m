@@ -8,17 +8,17 @@
 
 #import "SLFTableViewController.h"
 #import "SLFTableViewCell.h"
+#import <Parse/Parse.h> 
+
 
 @interface SLFTableViewController ()
-{
-NSArray * listImages;
-}
 
 @end
 
 @implementation SLFTableViewController
 
 {
+    NSMutableArray * selfies;
     UIButton * settingsButton;
     UIButton * addNewButton;
     
@@ -28,11 +28,30 @@ NSArray * listImages;
     self = [super initWithStyle:style];
     if (self)
     {
-        NSLog(@"hehy look derek");
+        selfies = [@[
         
+                     @{
+                        @"image" : @"https://media.licdn.com/mpr/mpr/shrink_200_200/p/4/005/036/354/393842f.jpg",
+                        @"caption" : @"This is a selfy!",
+                        @"user_id" : @"3n2mb23bnm",
+                        @"avatar" : @"file:///Users/derekweber/Downloads/10004061_10101874624304688_748631190_n.jpg",
+                        @"selfy_id" : @"hjk2132bn1"
+                        
+                        }]
+                     mutableCopy];
         
+        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+        testObject[@"foo"] = @"bar";
+        [testObject saveInBackground];
         
+        PFUser * user = [PFUser currentUser];
         
+        user.username = @"derekweber";
+        user.password = @"password";
+        
+        [user saveInBackground];
+        
+        self.tableView.rowHeight = self.tableView.frame.size.width + 100;
     }
     return self;
 }
@@ -41,7 +60,7 @@ NSArray * listImages;
 {
     [super viewDidLoad];
     
-    NSLog(@"hehy i'm adding a header seriously ");
+   
     
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 60)];
     headerView.backgroundColor = [UIColor darkGrayColor];
@@ -58,7 +77,7 @@ NSArray * listImages;
     settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
 //    [settingsButton setTitle:@"Settings" forState:UIControlStateNormal];
     settingsButton.backgroundColor = [UIColor blueColor];
-    [settingsButton addTarget:self action:@selector(settings) forControlEvents:UIControlEventTouchUpInside];
+    [settingsButton addTarget:self action:@selector(settingsButton) forControlEvents:UIControlEventTouchUpInside];
     [settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
     
     [headerView addSubview:settingsButton];
@@ -101,27 +120,29 @@ NSArray * listImages;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [selfies count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    SLFTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    // Configure the cell...
+    
+    if (cell == nil) cell = [[SLFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    
+                              
+    cell.selfyInfo = selfies[indexPath.row];
+                               
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

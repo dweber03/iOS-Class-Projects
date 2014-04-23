@@ -11,9 +11,10 @@
 @implementation SLFTableViewCell
 
 {
-    UIImageView * profileImage;
-    UILabel * profileName;
-    UILabel * profileURL;
+    UIImageView * selfyView;
+    UIImageView * avatarView;
+    UILabel * selfyCaption;
+   
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -22,48 +23,48 @@
     if (self)
         
     {
-        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
+        selfyView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
+        selfyView .backgroundColor = [UIColor lightGrayColor];
         
-        profileImage.layer.cornerRadius = 30;
-        profileImage.layer.masksToBounds = YES;
+        [self.contentView addSubview:selfyView];
         
-        [self.contentView addSubview:profileImage];
+        avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
+        avatarView .backgroundColor = [UIColor lightGrayColor];
+        avatarView.layer.cornerRadius = 20;
+        avatarView.layer.masksToBounds = YES;
         
-        profileName = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200,30)];
+        [self.contentView addSubview:avatarView];
         
-        profileName.textColor = [UIColor darkGrayColor];
-        profileName.font = [UIFont systemFontOfSize:30];
+        selfyCaption = [[UILabel alloc] initWithFrame:CGRectMake(80, 300, 220, 40)];
+        selfyCaption.textColor = [UIColor darkGrayColor];
+        selfyCaption.text = @"Hello";
         
-        [self.contentView addSubview:profileName];
-        
-        profileURL = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 200,30)];
-        
-        profileURL.textColor = [UIColor lightGrayColor];
-        profileURL.font = [UIFont systemFontOfSize:16];
-        
-        [self.contentView addSubview:profileURL];
-        
-        
-        
+        [self.contentView addSubview:selfyCaption];
+    
     }
     return self;
 }
 
 
 
-- (void)setProfileInfo:(NSDictionary *)profileInfo
+- (void)setSelfyInfo:(NSDictionary *)selfyInfo
 
 {
-    NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:profileInfo[@"image"]]];
+    _selfyInfo = selfyInfo;
+    
+    selfyCaption.text = selfyInfo[@"caption"];
+    NSURL * imageURL = [NSURL URLWithString:selfyInfo[@"image"]];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
     UIImage * image = [UIImage imageWithData:imageData];
     
-    profileImage.image = image;
+    selfyView.image = image;
     
-    profileName.text = profileInfo[@"name"];
-    profileURL.text = profileInfo[@"github"];
+    NSURL * avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];
+    NSData * avatarData = [NSData dataWithContentsOfURL:avatarURL];
+    UIImage * avatar = [UIImage imageWithData:avatarData];
     
+    avatarView.image = avatar;
     
-    _profileInfo = profileInfo;
-}
+    }
 
 @end
