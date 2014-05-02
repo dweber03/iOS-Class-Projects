@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TLATableViewController;
 
-@interface TLANavController : UINavigationController <UITextViewDelegate>
+
+@interface TLANavController : UINavigationController 
+
+- (void)addTableViewController: (TLATableViewController *)viewController;
 
 
 @end

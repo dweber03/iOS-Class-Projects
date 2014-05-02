@@ -16,7 +16,7 @@
 @implementation TLATableViewController
 {
 //    UIButton * addNewButton;
-    NSMutableArray * tweetItems;
+//    NSMutableArray * tweetItems;
     
 }
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,15 +29,16 @@
 //        
 //        self.tableView.tableHeaderView = headerView;
         
-        tweetItems = [
+        self.tweetItems = [
                       // starts array
                       @[
-                     // starts dictionary at index 0
-                     @{
-                         
-                         @"text" : @"Tweet info!",
-                         @"likes" : @40
-                         }]
+//                     // starts dictionary at index 0
+//                     @{
+//                         
+//                         @"text" : @"Tweet info!",
+//                         @"likes" : @40
+//                         }
+                        ]
                    mutableCopy];
         
         
@@ -94,7 +95,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return [tweetItems count];
+    return [self.tweetItems count];
 }
 
 
@@ -108,14 +109,29 @@
     }
     
     
-    cell.tweet = tweetItems[indexPath.row];
+    cell.tweet = self.tweetItems[indexPath.row];
 
     
 
     return cell;
 }
 
+-(void)createNewTweet:(NSString *)tweet
+{
+    if ([tweet isEqualToString:@""]) return;
+   
+    [self.tweetItems insertObject:@{@"likes":@0,
+                                  @"text": tweet
+                                  } atIndex:0];
+    
+    [self.tableView reloadData];
+    
+}
 
+-(BOOL)isTweetItemsEmpty
+{
+    return ([self.tweetItems count] == 0); 
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
