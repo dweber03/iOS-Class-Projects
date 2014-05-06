@@ -8,8 +8,11 @@
 
 #import "BBALevelController.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface BBALevelController () <UICollisionBehaviorDelegate>
 
+@property(nonatomic) AVAudioPlayer * player;
 
 @property (nonatomic) UIView * paddle;
 @property(nonatomic) NSMutableArray * balls;
@@ -61,11 +64,24 @@
         
         [self.view addGestureRecognizer:tap];
         
+        
+        
 //        UITouch * touch;
 //        UIGestureRecognizer * gesture;
        
     }
     return self;
+}
+
+- (void)playSoundWithName: (NSString *)soundName
+{
+    NSString * file = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
+    
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.player play];
 }
 
 - (void)viewDidLoad
@@ -126,6 +142,10 @@
 
 -(void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p
 {
+    if ([item1 isEqual:self.paddle] || [item2 isEqual:self.paddle]){
+         [self playSoundWithName:@"retro_click"];
+    }
+        
     UIView * tempBrick;
     for (UIView * brick in self.bricks)
     {
@@ -162,13 +182,15 @@
     }
     if(tempBrick != nil)
     {
-        [self.bricks removeObjectIdenticalTo:tempBrick];
+        [self playSoundWithName:@"electric_alert"];
         
-        if ([self.bricks count] == 0) {
-            
-            [self.delegate gameDone];
-            
-        }
+        [self.bricks removeObject:tempBrick];
+        
+//        if ([self.bricks count] == 0) {
+//            
+//            [self.delegate gameDone];
+//            
+//        }
     }
     
     
@@ -182,7 +204,8 @@
 -(void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
 
 {
-    if ([(NSString *)identifier isEqualToString:@"floor"])
+    if ([(NSString *) identifier isEqualToString:@"floor"])
+        
     {
         UIView * ball = (UIView *)item;
         [ball removeFromSuperview];
