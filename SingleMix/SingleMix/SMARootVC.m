@@ -20,6 +20,10 @@
 {
     SMATeamAVC * blueTeam;
     SMATeamBVC * redTeam;
+    
+    UILabel * blueScoreLabel;
+    UILabel * redScoreLabel;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,6 +36,23 @@
 
         [self.view addSubview:blueTeam.view];
         [self.view addSubview:redTeam.view];
+        
+        blueScoreLabel = [[UILabel alloc] initWithFrame:blueTeam.view.frame];
+        blueScoreLabel.textColor = [UIColor whiteColor];
+        blueScoreLabel.textAlignment = NSTextAlignmentRight;
+        blueScoreLabel.text = @"7";
+        blueScoreLabel.font = [UIFont systemFontOfSize:20];
+        [self.view addSubview:blueScoreLabel];
+        
+        redScoreLabel = [[UILabel alloc] initWithFrame:redTeam.view.frame];
+        redScoreLabel.textColor = [UIColor whiteColor];
+        redScoreLabel.textAlignment = NSTextAlignmentLeft;
+        redScoreLabel.text = @"15";
+        redScoreLabel.font = [UIFont systemFontOfSize:20];
+        
+        [self.view addSubview:redScoreLabel];
+        
+        
 
     }
     return self;
