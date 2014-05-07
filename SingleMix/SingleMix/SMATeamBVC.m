@@ -28,13 +28,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    int halfHeight = self.view.frame.size.height / 2;
+    int width = self.view.frame.size.width;
+    self.view.frame = CGRectMake(0, halfHeight, width, halfHeight);
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"TeamB");
 }
 
 

@@ -7,6 +7,9 @@
 //
 
 #import "SMARootVC.h"
+#import "SMATeamAVC.h"
+#import "SMATeamBVC.h"
+
 
 @interface SMARootVC ()
 
@@ -14,11 +17,22 @@
 
 @implementation SMARootVC
 
+{
+    SMATeamAVC * blueTeam;
+    SMATeamBVC * redTeam;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        blueTeam = [[SMATeamAVC alloc] initWithNibName:nil bundle:nil];
+        redTeam = [[SMATeamBVC alloc]initWithNibName:nil bundle:nil];
+
+        [self.view addSubview:blueTeam.view];
+        [self.view addSubview:redTeam.view];
+
     }
     return self;
 }
@@ -34,6 +48,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    NSLog(@"Root");
+//}
 
 @end
