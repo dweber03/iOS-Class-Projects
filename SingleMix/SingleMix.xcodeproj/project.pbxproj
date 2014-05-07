@@ -20,6 +20,8 @@
 		668AFB0F191AA457009DED3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 668AFB0D191AA457009DED3C /* InfoPlist.strings */; };
 		668AFB11191AA457009DED3C /* SingleMixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB10191AA457009DED3C /* SingleMixTests.m */; };
 		668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB1B191AA4E7009DED3C /* SMARootVC.m */; };
+		668AFB1F191AA749009DED3C /* SMATeamAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB1E191AA749009DED3C /* SMATeamAVC.m */; };
+		668AFB22191AA75B009DED3C /* SMATeamBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB21191AA75B009DED3C /* SMATeamBVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		668AFB10191AA457009DED3C /* SingleMixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleMixTests.m; sourceTree = "<group>"; };
 		668AFB1A191AA4E7009DED3C /* SMARootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMARootVC.h; sourceTree = "<group>"; };
 		668AFB1B191AA4E7009DED3C /* SMARootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMARootVC.m; sourceTree = "<group>"; };
+		668AFB1D191AA749009DED3C /* SMATeamAVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMATeamAVC.h; sourceTree = "<group>"; };
+		668AFB1E191AA749009DED3C /* SMATeamAVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMATeamAVC.m; sourceTree = "<group>"; };
+		668AFB20191AA75B009DED3C /* SMATeamBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMATeamBVC.h; sourceTree = "<group>"; };
+		668AFB21191AA75B009DED3C /* SMATeamBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMATeamBVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,10 @@
 				668AFAFB191AA457009DED3C /* SMAAppDelegate.m */,
 				668AFB1A191AA4E7009DED3C /* SMARootVC.h */,
 				668AFB1B191AA4E7009DED3C /* SMARootVC.m */,
+				668AFB1D191AA749009DED3C /* SMATeamAVC.h */,
+				668AFB1E191AA749009DED3C /* SMATeamAVC.m */,
+				668AFB20191AA75B009DED3C /* SMATeamBVC.h */,
+				668AFB21191AA75B009DED3C /* SMATeamBVC.m */,
 				668AFAFD191AA457009DED3C /* Images.xcassets */,
 				668AFAF2191AA457009DED3C /* Supporting Files */,
 			);
@@ -246,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				668AFAFC191AA457009DED3C /* SMAAppDelegate.m in Sources */,
+				668AFB22191AA75B009DED3C /* SMATeamBVC.m in Sources */,
+				668AFB1F191AA749009DED3C /* SMATeamAVC.m in Sources */,
 				668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */,
 				668AFAF8191AA457009DED3C /* main.m in Sources */,
 			);
