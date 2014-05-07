@@ -19,6 +19,7 @@
 		668AFB07191AA457009DED3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668AFAEF191AA457009DED3C /* UIKit.framework */; };
 		668AFB0F191AA457009DED3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 668AFB0D191AA457009DED3C /* InfoPlist.strings */; };
 		668AFB11191AA457009DED3C /* SingleMixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB10191AA457009DED3C /* SingleMixTests.m */; };
+		668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB1B191AA4E7009DED3C /* SMARootVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		668AFB0C191AA457009DED3C /* SingleMixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SingleMixTests-Info.plist"; sourceTree = "<group>"; };
 		668AFB0E191AA457009DED3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		668AFB10191AA457009DED3C /* SingleMixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleMixTests.m; sourceTree = "<group>"; };
+		668AFB1A191AA4E7009DED3C /* SMARootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMARootVC.h; sourceTree = "<group>"; };
+		668AFB1B191AA4E7009DED3C /* SMARootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMARootVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				668AFAFA191AA457009DED3C /* SMAAppDelegate.h */,
 				668AFAFB191AA457009DED3C /* SMAAppDelegate.m */,
+				668AFB1A191AA4E7009DED3C /* SMARootVC.h */,
+				668AFB1B191AA4E7009DED3C /* SMARootVC.m */,
 				668AFAFD191AA457009DED3C /* Images.xcassets */,
 				668AFAF2191AA457009DED3C /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				668AFAFC191AA457009DED3C /* SMAAppDelegate.m in Sources */,
+				668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */,
 				668AFAF8191AA457009DED3C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
