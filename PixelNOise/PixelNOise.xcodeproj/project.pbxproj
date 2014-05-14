@@ -25,6 +25,8 @@
 		667AE6FC1917CD59005E8D76 /* echo_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 667AE6FB1917CD59005E8D76 /* echo_alert.wav */; };
 		667AE7031917EB29005E8D76 /* PNAWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AE7021917EB29005E8D76 /* PNAWorldViewController.m */; };
 		667AE70519182610005E8D76 /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 667AE70419182610005E8D76 /* electric_alert.wav */; };
+		668AFA4B1919154A009DED3C /* PNAWorld2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFA4A1919154A009DED3C /* PNAWorld2Controller.m */; };
+		668AFA4D19192049009DED3C /* drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 668AFA4C19192049009DED3C /* drip.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		667AE7011917EB29005E8D76 /* PNAWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAWorldViewController.h; sourceTree = "<group>"; };
 		667AE7021917EB29005E8D76 /* PNAWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAWorldViewController.m; sourceTree = "<group>"; };
 		667AE70419182610005E8D76 /* electric_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electric_alert.wav; sourceTree = "<group>"; };
+		668AFA491919154A009DED3C /* PNAWorld2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAWorld2Controller.h; sourceTree = "<group>"; };
+		668AFA4A1919154A009DED3C /* PNAWorld2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAWorld2Controller.m; sourceTree = "<group>"; };
+		668AFA4C19192049009DED3C /* drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drip.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,8 @@
 			children = (
 				667AE7011917EB29005E8D76 /* PNAWorldViewController.h */,
 				667AE7021917EB29005E8D76 /* PNAWorldViewController.m */,
+				668AFA491919154A009DED3C /* PNAWorld2Controller.h */,
+				668AFA4A1919154A009DED3C /* PNAWorld2Controller.m */,
 				667AE6F61917C8A5005E8D76 /* PNAPixelSounds.h */,
 				667AE6F71917C8A5005E8D76 /* PNAPixelSounds.m */,
 				667AE6F31917C76B005E8D76 /* PNAViewController.h */,
@@ -129,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				667AE6D31917C6F4005E8D76 /* PNAAppDelegate.h */,
+				668AFA4C19192049009DED3C /* drip.wav */,
 				667AE70419182610005E8D76 /* electric_alert.wav */,
 				667AE6D41917C6F4005E8D76 /* PNAAppDelegate.m */,
 				667AE6FB1917CD59005E8D76 /* echo_alert.wav */,
@@ -247,6 +255,7 @@
 				667AE70519182610005E8D76 /* electric_alert.wav in Resources */,
 				667AE6FC1917CD59005E8D76 /* echo_alert.wav in Resources */,
 				667AE6FA1917CD1E005E8D76 /* click_alert.wav in Resources */,
+				668AFA4D19192049009DED3C /* drip.wav in Resources */,
 				667AE6CF1917C6F4005E8D76 /* InfoPlist.strings in Resources */,
 				667AE6D71917C6F4005E8D76 /* Images.xcassets in Resources */,
 			);
@@ -272,6 +281,7 @@
 				667AE6F51917C76B005E8D76 /* PNAViewController.m in Sources */,
 				667AE6D11917C6F4005E8D76 /* main.m in Sources */,
 				667AE7031917EB29005E8D76 /* PNAWorldViewController.m in Sources */,
+				668AFA4B1919154A009DED3C /* PNAWorld2Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +478,7 @@
 				667AE6EF1917C6F5005E8D76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		667AE6F01917C6F5005E8D76 /* Build configuration list for PBXNativeTarget "PixelNOiseTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +487,7 @@
 				667AE6F21917C6F5005E8D76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

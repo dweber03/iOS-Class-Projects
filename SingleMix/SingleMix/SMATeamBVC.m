@@ -7,6 +7,7 @@
 //
 
 #import "SMATeamBVC.h"
+#import "SMAScores.h"
 
 @interface SMATeamBVC ()
 
@@ -28,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    int halfHeight = self.view.frame.size.height / 2;
-    int width = self.view.frame.size.width;
-    self.view.frame = CGRectMake(0, halfHeight, width, halfHeight);
+//    int halfHeight = self.view.frame.size.height / 2;
+//    int width = self.view.frame.size.width;
+//    self.view.frame = CGRectMake(0, halfHeight, width, halfHeight);
 
 }
 
@@ -42,7 +43,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"TeamB");
+    [[SMAScores mainData] updateTeamBScore];
 }
 
 

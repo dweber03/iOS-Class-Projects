@@ -10,9 +10,11 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface BBALevelController () <UICollisionBehaviorDelegate>
+#import "BBAGameData.h"
 
-@property(nonatomic) AVAudioPlayer * player;
+@interface BBALevelController () <UICollisionBehaviorDelegate, AVAudioPlayerDelegate>
+
+@property (nonatomic) NSMutableArray* players;
 
 @property (nonatomic) UIView * paddle;
 @property(nonatomic) NSMutableArray * balls;
@@ -52,7 +54,7 @@
         
         self.bricks = [@[] mutableCopy];
         self.balls = [@[] mutableCopy];
-        
+        self.players = [@[] mutableCopy];
         paddleWidth = 80;
         
         lives = 3;
@@ -79,9 +81,17 @@
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
     
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     
-    [self.player play];
+    player.delegate = self;
+    [self.players addObject:player];
+    
+    [player play];
+}
+
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    [self.players removeObjectIdenticalTo:player];
 }
 
 - (void)viewDidLoad
@@ -93,6 +103,8 @@
 - (void)resetLevel
 {
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    [BBAGameData mainData].currentScore = 0;
     
     [self createPaddle];
     [self createBricks];
@@ -169,9 +181,13 @@
                 [self.collider removeItem:brick];
                 
                 points += brick.tag;
+                
+                
+                NSInteger currentScore = [BBAGameData mainData].currentScore;
+                
+                [BBAGameData mainData].currentScore = currentScore + brick.tag;
+                
                 [self.delegate addPoints:points];
-                
-                
 //                [brickLabel removeFromSuperview];
 //                [self pointLabelWithBrick:brick];
                 

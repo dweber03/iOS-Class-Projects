@@ -8,6 +8,8 @@
 
 #import "BBAViewController.h"
 #import "BBALevelController.h"
+#import "BBAGameData.h"
+
 
 @interface BBAViewController () <BBALevelDelegate>
 
@@ -15,13 +17,23 @@
 
 @implementation BBAViewController
 {
-    BBALevelController * level;
+    BBALevelController * levelController;
+//    BBAHeader * header;
+//    BBAStats * stats;
+    
     UIButton * startButton;
+    
+    
     UILabel * score;
-    int lives;
     UILabel * gameLives;
     
+    int lives;
+    int topScore;
+    int level;
+    BOOL newHighScore;
+    
 }
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,8 +50,6 @@
         
         
         
-        score = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 280, SCREEN_HEIGHT - 300)];
-        score.backgroundColor = [UIColor blackColor];
         
         
     }
@@ -48,25 +58,32 @@
 
 - (void)startGame
 {
+    
+    score = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 280, SCREEN_HEIGHT - 300)];
+    score.backgroundColor = [UIColor blackColor];
+    score.textAlignment = NSTextAlignmentLeft;
+    score.text = [NSString stringWithFormat:@"%d", [BBAGameData mainData].topScore];
+    [self.view addSubview:score];
+    
     lives = 3;
 }
 
 - (void)resetLevel
 {
     [startButton removeFromSuperview];
-    level = [[BBALevelController alloc] initWithNibName:nil bundle:nil];
-    level.delegate = self;
-    level.view.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
-    level.view.backgroundColor = [UIColor blueColor];
+    levelController = [[BBALevelController alloc] initWithNibName:nil bundle:nil];
+    levelController.delegate = self;
+    levelController.view.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
+    levelController.view.backgroundColor = [UIColor blueColor];
     
     [self.view addSubview:score];
-    [self.view addSubview:level.view];
-    [level resetLevel];
+    [self.view addSubview:levelController.view];
+    [levelController resetLevel];
 }
 
 -(void)gameDone
 {
-    [level.view removeFromSuperview];
+    [levelController.view removeFromSuperview];
     [score removeFromSuperview];
     [self.view addSubview:startButton];
     

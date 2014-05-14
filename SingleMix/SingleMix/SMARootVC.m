@@ -33,9 +33,20 @@
     {
         blueTeam = [[SMATeamAVC alloc] initWithNibName:nil bundle:nil];
         redTeam = [[SMATeamBVC alloc]initWithNibName:nil bundle:nil];
+        
+        int halfHeight = self.view.frame.size.height / 2;
+        int width = self.view.frame.size.width;
+        
+        redTeam.view.frame = CGRectMake(0, halfHeight, width, halfHeight);
+        blueTeam.view.frame = CGRectMake(0, 0, width, halfHeight);
+        
+        blueTeam.view.backgroundColor = [UIColor blueColor];
+        redTeam.view.backgroundColor = [UIColor redColor];
 
         [self.view addSubview:blueTeam.view];
         [self.view addSubview:redTeam.view];
+        
+        
         
         blueScoreLabel = [[UILabel alloc] initWithFrame:blueTeam.view.frame];
         blueScoreLabel.textColor = [UIColor whiteColor];
@@ -52,6 +63,7 @@
         
         [self.view addSubview:redScoreLabel];
         
+
         
 
     }

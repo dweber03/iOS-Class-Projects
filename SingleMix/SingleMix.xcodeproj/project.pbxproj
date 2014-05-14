@@ -22,6 +22,7 @@
 		668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB1B191AA4E7009DED3C /* SMARootVC.m */; };
 		668AFB1F191AA749009DED3C /* SMATeamAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB1E191AA749009DED3C /* SMATeamAVC.m */; };
 		668AFB22191AA75B009DED3C /* SMATeamBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB21191AA75B009DED3C /* SMATeamBVC.m */; };
+		668AFB25191AA9B6009DED3C /* SMAScores.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFB24191AA9B6009DED3C /* SMAScores.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		668AFB1E191AA749009DED3C /* SMATeamAVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMATeamAVC.m; sourceTree = "<group>"; };
 		668AFB20191AA75B009DED3C /* SMATeamBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMATeamBVC.h; sourceTree = "<group>"; };
 		668AFB21191AA75B009DED3C /* SMATeamBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMATeamBVC.m; sourceTree = "<group>"; };
+		668AFB23191AA9B6009DED3C /* SMAScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAScores.h; sourceTree = "<group>"; };
+		668AFB24191AA9B6009DED3C /* SMAScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAScores.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				668AFAFB191AA457009DED3C /* SMAAppDelegate.m */,
 				668AFB1A191AA4E7009DED3C /* SMARootVC.h */,
 				668AFB1B191AA4E7009DED3C /* SMARootVC.m */,
+				668AFB23191AA9B6009DED3C /* SMAScores.h */,
+				668AFB24191AA9B6009DED3C /* SMAScores.m */,
 				668AFB1D191AA749009DED3C /* SMATeamAVC.h */,
 				668AFB1E191AA749009DED3C /* SMATeamAVC.m */,
 				668AFB20191AA75B009DED3C /* SMATeamBVC.h */,
@@ -259,6 +264,7 @@
 				668AFB22191AA75B009DED3C /* SMATeamBVC.m in Sources */,
 				668AFB1F191AA749009DED3C /* SMATeamAVC.m in Sources */,
 				668AFB1C191AA4E7009DED3C /* SMARootVC.m in Sources */,
+				668AFB25191AA9B6009DED3C /* SMAScores.m in Sources */,
 				668AFAF8191AA457009DED3C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

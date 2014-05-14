@@ -7,6 +7,7 @@
 //
 
 #import "SMATeamAVC.h"
+#import "SMAScores.h"
 
 @interface SMATeamAVC ()
 
@@ -14,42 +15,12 @@
 
 @implementation SMATeamAVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        self.view.backgroundColor = [UIColor blueColor];
-        
-        
-       
-
-        
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    int halfHeight = self.view.frame.size.height / 2;
-    int width = self.view.frame.size.width;
-
-    self.view.frame = CGRectMake(0, 0, width, halfHeight);
-    
-
-    }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Root");
+    [[SMAScores mainData] updateTeamAScore];
+    
+    
 }
 
 

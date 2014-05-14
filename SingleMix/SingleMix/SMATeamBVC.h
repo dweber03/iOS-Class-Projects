@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMATeamAVC.h"
 
-@interface SMATeamBVC : UIViewController
+@interface SMATeamBVC : SMATeamAVC
+
 
 
 

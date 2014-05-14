@@ -7,6 +7,7 @@
 //
 
 #import "TDLTableViewCell.h"
+#import "TDLSingleton.h"
 
 @implementation TDLTableViewCell
 {
@@ -48,11 +49,13 @@
     return self;
 }
 
-
-
-- (void)setProfileInfo:(NSDictionary *)profileInfo
-
+-(void)setIndex:(NSInteger)index
 {
+    _index = index;
+    
+    NSDictionary * profileInfo = [[TDLSingleton sharedSingleton] allListItems][index];
+    
+    
     NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:profileInfo[@"image"]]];
     UIImage * image = [UIImage imageWithData:imageData];
     
@@ -60,15 +63,6 @@
     
     profileName.text = profileInfo[@"name"];
     profileURL.text = profileInfo[@"github"];
-    
-                                                                 
-    _profileInfo = profileInfo;
-}
-
--(void) awakeFromNib
-{
-    
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		667AE6FE1917D5F7005E8D76 /* retro_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 667AE6FD1917D5F7005E8D76 /* retro_click.wav */; };
 		667AE7001917D60E005E8D76 /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 667AE6FF1917D60E005E8D76 /* electric_alert.wav */; };
+		668AFA91191958B5009DED3C /* BBASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFA90191958B4009DED3C /* BBASingleton.m */; };
+		668AFA97191A6926009DED3C /* BBAGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 668AFA96191A6926009DED3C /* BBAGameData.m */; };
 		668BEA2B190019C7009A7AF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668BEA2A190019C7009A7AF2 /* Foundation.framework */; };
 		668BEA2D190019C7009A7AF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668BEA2C190019C7009A7AF2 /* CoreGraphics.framework */; };
 		668BEA2F190019C7009A7AF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668BEA2E190019C7009A7AF2 /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* Begin PBXFileReference section */
 		667AE6FD1917D5F7005E8D76 /* retro_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro_click.wav; sourceTree = "<group>"; };
 		667AE6FF1917D60E005E8D76 /* electric_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electric_alert.wav; sourceTree = "<group>"; };
+		668AFA8F191958B4009DED3C /* BBASingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASingleton.h; sourceTree = "<group>"; };
+		668AFA90191958B4009DED3C /* BBASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASingleton.m; sourceTree = "<group>"; };
+		668AFA95191A6926009DED3C /* BBAGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAGameData.h; sourceTree = "<group>"; };
+		668AFA96191A6926009DED3C /* BBAGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAGameData.m; sourceTree = "<group>"; };
 		668BEA27190019C7009A7AF2 /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		668BEA2A190019C7009A7AF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		668BEA2C190019C7009A7AF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +168,10 @@
 			children = (
 				668BEA5C19001D2E009A7AF2 /* BBALevelController.h */,
 				668BEA5D19001D2E009A7AF2 /* BBALevelController.m */,
+				668AFA95191A6926009DED3C /* BBAGameData.h */,
+				668AFA96191A6926009DED3C /* BBAGameData.m */,
+				668AFA8F191958B4009DED3C /* BBASingleton.h */,
+				668AFA90191958B4009DED3C /* BBASingleton.m */,
 				668BEA5919001BC7009A7AF2 /* BBAViewController.h */,
 				668BEA5A19001BC7009A7AF2 /* BBAViewController.m */,
 			);
@@ -268,8 +278,10 @@
 			files = (
 				668BEA5E19001D2E009A7AF2 /* BBALevelController.m in Sources */,
 				668BEA5B19001BC7009A7AF2 /* BBAViewController.m in Sources */,
+				668AFA91191958B5009DED3C /* BBASingleton.m in Sources */,
 				668BEA3B190019C7009A7AF2 /* BBAAppDelegate.m in Sources */,
 				668BEA37190019C7009A7AF2 /* main.m in Sources */,
+				668AFA97191A6926009DED3C /* BBAGameData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

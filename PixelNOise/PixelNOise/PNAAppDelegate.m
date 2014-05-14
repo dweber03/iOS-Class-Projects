@@ -10,6 +10,8 @@
 #import "PNAViewController.h"
 #import "PNAWorldViewController.h"
 
+#import "PNAWorld2Controller.h"
+
 @implementation PNAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -19,7 +21,7 @@
     
     
     
-    self.window.rootViewController = [[PNAWorldViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[PNAWorld2Controller alloc] initWithNibName:nil bundle:nil];
     
     
     
