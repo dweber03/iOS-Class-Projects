@@ -7,12 +7,20 @@
 //
 
 #import "GLAAppDelegate.h"
+#import "GLACollectionVC.h"
 
 @implementation GLAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor greenColor];
+    
+    self.window.rootViewController = [[GLACollectionVC alloc]initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+    
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

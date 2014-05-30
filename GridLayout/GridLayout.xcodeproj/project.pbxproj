@@ -22,7 +22,6 @@
 		662F03BA1938BB9100E7DDD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 662F03B81938BB9100E7DDD0 /* InfoPlist.strings */; };
 		662F03BC1938BB9100E7DDD0 /* GridLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03BB1938BB9100E7DDD0 /* GridLayoutTests.m */; };
 		662F03C71938BC1400E7DDD0 /* GLACollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03C61938BC1400E7DDD0 /* GLACollectionVC.m */; };
-		662F03CA1938BD8C00E7DDD0 /* GLALayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03C91938BD8C00E7DDD0 /* GLALayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		662F03BB1938BB9100E7DDD0 /* GridLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridLayoutTests.m; sourceTree = "<group>"; };
 		662F03C51938BC1400E7DDD0 /* GLACollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLACollectionVC.h; path = GridLayout/GLACollectionVC.h; sourceTree = "<group>"; };
 		662F03C61938BC1400E7DDD0 /* GLACollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLACollectionVC.m; path = GridLayout/GLACollectionVC.m; sourceTree = "<group>"; };
-		662F03C81938BD8C00E7DDD0 /* GLALayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLALayout.h; sourceTree = "<group>"; };
-		662F03C91938BD8C00E7DDD0 /* GLALayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLALayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +120,6 @@
 				662F039F1938BB9100E7DDD0 /* GLAAppDelegate.h */,
 				662F03A01938BB9100E7DDD0 /* GLAAppDelegate.m */,
 				662F03A21938BB9100E7DDD0 /* Main.storyboard */,
-				662F03C81938BD8C00E7DDD0 /* GLALayout.h */,
-				662F03C91938BD8C00E7DDD0 /* GLALayout.m */,
 				662F03A51938BB9100E7DDD0 /* GLAViewController.h */,
 				662F03A61938BB9100E7DDD0 /* GLAViewController.m */,
 				662F03A81938BB9100E7DDD0 /* Images.xcassets */,
@@ -263,7 +258,6 @@
 				662F039D1938BB9100E7DDD0 /* main.m in Sources */,
 				662F03C71938BC1400E7DDD0 /* GLACollectionVC.m in Sources */,
 				662F03A11938BB9100E7DDD0 /* GLAAppDelegate.m in Sources */,
-				662F03CA1938BD8C00E7DDD0 /* GLALayout.m in Sources */,
 				662F03A71938BB9100E7DDD0 /* GLAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
