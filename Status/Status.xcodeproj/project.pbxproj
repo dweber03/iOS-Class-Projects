@@ -68,6 +68,7 @@
 		66A13EF0192BAA260008F427 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A13EED192BAA260008F427 /* Twitter.framework */; };
 		66A1409A192D1E200008F427 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A14099192D1E200008F427 /* MapKit.framework */; };
 		66A1409C192D1F670008F427 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A1409B192D1F670008F427 /* CoreLocation.framework */; };
+		66FAD5A6193769FE00DE685D /* STADataArchitecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FAD5A5193769FE00DE685D /* STADataArchitecture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		66A13EED192BAA260008F427 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		66A14099192D1E200008F427 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		66A1409B192D1F670008F427 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		66FAD5A4193769FE00DE685D /* STADataArchitecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STADataArchitecture.h; sourceTree = "<group>"; };
+		66FAD5A5193769FE00DE685D /* STADataArchitecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STADataArchitecture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 			children = (
 				66A13E81192A40E70008F427 /* Images */,
 				66A13E7E192A3BC30008F427 /* STAVC.h */,
+				66FAD5A4193769FE00DE685D /* STADataArchitecture.h */,
+				66FAD5A5193769FE00DE685D /* STADataArchitecture.m */,
 				66A13E7F192A3BC30008F427 /* STAVC.m */,
 				66A13E84192A45590008F427 /* STASmileVC.h */,
 				66A13E85192A45590008F427 /* STASmileVC.m */,
@@ -489,6 +494,7 @@
 				66A13EE3192BA9D40008F427 /* STTwitterAppOnly.m in Sources */,
 				66A13EE6192BA9D40008F427 /* STTwitterOS.m in Sources */,
 				66A13EE7192BA9D40008F427 /* STTwitterOSRequest.m in Sources */,
+				66FAD5A6193769FE00DE685D /* STADataArchitecture.m in Sources */,
 				66A13EE0192BA9D40008F427 /* NSString+STTwitter.m in Sources */,
 				66A13EE1192BA9D40008F427 /* STHTTPRequest+STTwitter.m in Sources */,
 				66A13E86192A45590008F427 /* STASmileVC.m in Sources */,
@@ -694,6 +700,7 @@
 				66A13E7A192A39120008F427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66A13E7B192A39120008F427 /* Build configuration list for PBXNativeTarget "StatusTests" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +709,7 @@
 				66A13E7D192A39120008F427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
