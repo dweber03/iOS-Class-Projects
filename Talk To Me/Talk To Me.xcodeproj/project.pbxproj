@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		662F03D8193CB1C500E7DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03D7193CB1C500E7DDD0 /* Foundation.framework */; };
+		662F03DA193CB1C500E7DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03D9193CB1C500E7DDD0 /* CoreGraphics.framework */; };
+		662F03DC193CB1C500E7DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03DB193CB1C500E7DDD0 /* UIKit.framework */; };
+		662F03E2193CB1C500E7DDD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 662F03E0193CB1C500E7DDD0 /* InfoPlist.strings */; };
+		662F03E4193CB1C500E7DDD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03E3193CB1C500E7DDD0 /* main.m */; };
+		662F03E8193CB1C500E7DDD0 /* TTMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03E7193CB1C500E7DDD0 /* TTMAppDelegate.m */; };
+		662F03EA193CB1C500E7DDD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662F03E9193CB1C500E7DDD0 /* Images.xcassets */; };
+		662F03F1193CB1C500E7DDD0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03F0193CB1C500E7DDD0 /* XCTest.framework */; };
+		662F03F2193CB1C500E7DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03D7193CB1C500E7DDD0 /* Foundation.framework */; };
+		662F03F3193CB1C500E7DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F03DB193CB1C500E7DDD0 /* UIKit.framework */; };
+		662F03FB193CB1C500E7DDD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 662F03F9193CB1C500E7DDD0 /* InfoPlist.strings */; };
+		662F03FD193CB1C500E7DDD0 /* Talk_To_MeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 662F03FC193CB1C500E7DDD0 /* Talk_To_MeTests.m */; };
+		662F0407193CB22000E7DDD0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F0406193CB22000E7DDD0 /* Parse.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		662F03F4193CB1C500E7DDD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 662F03CC193CB1C500E7DDD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 662F03D3193CB1C500E7DDD0;
+			remoteInfo = "Talk To Me";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		662F03D4193CB1C500E7DDD0 /* Talk To Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talk To Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662F03D7193CB1C500E7DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		662F03D9193CB1C500E7DDD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		662F03DB193CB1C500E7DDD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		662F03DF193CB1C500E7DDD0 /* Talk To Me-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Talk To Me-Info.plist"; sourceTree = "<group>"; };
+		662F03E1193CB1C500E7DDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		662F03E3193CB1C500E7DDD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		662F03E5193CB1C500E7DDD0 /* Talk To Me-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Talk To Me-Prefix.pch"; sourceTree = "<group>"; };
+		662F03E6193CB1C500E7DDD0 /* TTMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMAppDelegate.h; sourceTree = "<group>"; };
+		662F03E7193CB1C500E7DDD0 /* TTMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMAppDelegate.m; sourceTree = "<group>"; };
+		662F03E9193CB1C500E7DDD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		662F03EF193CB1C500E7DDD0 /* Talk To MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talk To MeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662F03F0193CB1C500E7DDD0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		662F03F8193CB1C500E7DDD0 /* Talk To MeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Talk To MeTests-Info.plist"; sourceTree = "<group>"; };
+		662F03FA193CB1C500E7DDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		662F03FC193CB1C500E7DDD0 /* Talk_To_MeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Talk_To_MeTests.m; sourceTree = "<group>"; };
+		662F0406193CB22000E7DDD0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		662F03D1193CB1C500E7DDD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03DA193CB1C500E7DDD0 /* CoreGraphics.framework in Frameworks */,
+				662F03DC193CB1C500E7DDD0 /* UIKit.framework in Frameworks */,
+				662F0407193CB22000E7DDD0 /* Parse.framework in Frameworks */,
+				662F03D8193CB1C500E7DDD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662F03EC193CB1C500E7DDD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03F1193CB1C500E7DDD0 /* XCTest.framework in Frameworks */,
+				662F03F3193CB1C500E7DDD0 /* UIKit.framework in Frameworks */,
+				662F03F2193CB1C500E7DDD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		662F03CB193CB1C500E7DDD0 = {
+			isa = PBXGroup;
+			children = (
+				662F03DD193CB1C500E7DDD0 /* Talk To Me */,
+				662F03F6193CB1C500E7DDD0 /* Talk To MeTests */,
+				662F03D6193CB1C500E7DDD0 /* Frameworks */,
+				662F03D5193CB1C500E7DDD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		662F03D5193CB1C500E7DDD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				662F03D4193CB1C500E7DDD0 /* Talk To Me.app */,
+				662F03EF193CB1C500E7DDD0 /* Talk To MeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		662F03D6193CB1C500E7DDD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				662F0406193CB22000E7DDD0 /* Parse.framework */,
+				662F03D7193CB1C500E7DDD0 /* Foundation.framework */,
+				662F03D9193CB1C500E7DDD0 /* CoreGraphics.framework */,
+				662F03DB193CB1C500E7DDD0 /* UIKit.framework */,
+				662F03F0193CB1C500E7DDD0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		662F03DD193CB1C500E7DDD0 /* Talk To Me */ = {
+			isa = PBXGroup;
+			children = (
+				662F03E6193CB1C500E7DDD0 /* TTMAppDelegate.h */,
+				662F03E7193CB1C500E7DDD0 /* TTMAppDelegate.m */,
+				662F03E9193CB1C500E7DDD0 /* Images.xcassets */,
+				662F03DE193CB1C500E7DDD0 /* Supporting Files */,
+			);
+			path = "Talk To Me";
+			sourceTree = "<group>";
+		};
+		662F03DE193CB1C500E7DDD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				662F03DF193CB1C500E7DDD0 /* Talk To Me-Info.plist */,
+				662F03E0193CB1C500E7DDD0 /* InfoPlist.strings */,
+				662F03E3193CB1C500E7DDD0 /* main.m */,
+				662F03E5193CB1C500E7DDD0 /* Talk To Me-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		662F03F6193CB1C500E7DDD0 /* Talk To MeTests */ = {
+			isa = PBXGroup;
+			children = (
+				662F03FC193CB1C500E7DDD0 /* Talk_To_MeTests.m */,
+				662F03F7193CB1C500E7DDD0 /* Supporting Files */,
+			);
+			path = "Talk To MeTests";
+			sourceTree = "<group>";
+		};
+		662F03F7193CB1C500E7DDD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				662F03F8193CB1C500E7DDD0 /* Talk To MeTests-Info.plist */,
+				662F03F9193CB1C500E7DDD0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		662F03D3193CB1C500E7DDD0 /* Talk To Me */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662F0400193CB1C500E7DDD0 /* Build configuration list for PBXNativeTarget "Talk To Me" */;
+			buildPhases = (
+				662F03D0193CB1C500E7DDD0 /* Sources */,
+				662F03D1193CB1C500E7DDD0 /* Frameworks */,
+				662F03D2193CB1C500E7DDD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Talk To Me";
+			productName = "Talk To Me";
+			productReference = 662F03D4193CB1C500E7DDD0 /* Talk To Me.app */;
+			productType = "com.apple.product-type.application";
+		};
+		662F03EE193CB1C500E7DDD0 /* Talk To MeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662F0403193CB1C500E7DDD0 /* Build configuration list for PBXNativeTarget "Talk To MeTests" */;
+			buildPhases = (
+				662F03EB193CB1C500E7DDD0 /* Sources */,
+				662F03EC193CB1C500E7DDD0 /* Frameworks */,
+				662F03ED193CB1C500E7DDD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				662F03F5193CB1C500E7DDD0 /* PBXTargetDependency */,
+			);
+			name = "Talk To MeTests";
+			productName = "Talk To MeTests";
+			productReference = 662F03EF193CB1C500E7DDD0 /* Talk To MeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		662F03CC193CB1C500E7DDD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TTM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Derek Weber";
+				TargetAttributes = {
+					662F03EE193CB1C500E7DDD0 = {
+						TestTargetID = 662F03D3193CB1C500E7DDD0;
+					};
+				};
+			};
+			buildConfigurationList = 662F03CF193CB1C500E7DDD0 /* Build configuration list for PBXProject "Talk To Me" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 662F03CB193CB1C500E7DDD0;
+			productRefGroup = 662F03D5193CB1C500E7DDD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				662F03D3193CB1C500E7DDD0 /* Talk To Me */,
+				662F03EE193CB1C500E7DDD0 /* Talk To MeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		662F03D2193CB1C500E7DDD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03E2193CB1C500E7DDD0 /* InfoPlist.strings in Resources */,
+				662F03EA193CB1C500E7DDD0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662F03ED193CB1C500E7DDD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03FB193CB1C500E7DDD0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		662F03D0193CB1C500E7DDD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03E8193CB1C500E7DDD0 /* TTMAppDelegate.m in Sources */,
+				662F03E4193CB1C500E7DDD0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662F03EB193CB1C500E7DDD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662F03FD193CB1C500E7DDD0 /* Talk_To_MeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		662F03F5193CB1C500E7DDD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 662F03D3193CB1C500E7DDD0 /* Talk To Me */;
+			targetProxy = 662F03F4193CB1C500E7DDD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		662F03E0193CB1C500E7DDD0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				662F03E1193CB1C500E7DDD0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		662F03F9193CB1C500E7DDD0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				662F03FA193CB1C500E7DDD0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		662F03FE193CB1C500E7DDD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		662F03FF193CB1C500E7DDD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		662F0401193CB1C500E7DDD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To Me/Talk To Me-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		662F0402193CB1C500E7DDD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To Me/Talk To Me-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		662F0404193CB1C500E7DDD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Talk To Me.app/Talk To Me";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Talk To MeTests/Talk To MeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		662F0405193CB1C500E7DDD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Talk To Me.app/Talk To Me";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To MeTests/Talk To MeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		662F03CF193CB1C500E7DDD0 /* Build configuration list for PBXProject "Talk To Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662F03FE193CB1C500E7DDD0 /* Debug */,
+				662F03FF193CB1C500E7DDD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		662F0400193CB1C500E7DDD0 /* Build configuration list for PBXNativeTarget "Talk To Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662F0401193CB1C500E7DDD0 /* Debug */,
+				662F0402193CB1C500E7DDD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		662F0403193CB1C500E7DDD0 /* Build configuration list for PBXNativeTarget "Talk To MeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662F0404193CB1C500E7DDD0 /* Debug */,
+				662F0405193CB1C500E7DDD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 662F03CC193CB1C500E7DDD0 /* Project object */;
+}
