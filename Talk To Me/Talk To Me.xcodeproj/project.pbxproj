@@ -29,6 +29,7 @@
 		662F0421193CB54800E7DDD0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F0420193CB54800E7DDD0 /* Security.framework */; };
 		662F0423193CB57800E7DDD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F0422193CB57800E7DDD0 /* CoreLocation.framework */; };
 		662F0425193CB5D800E7DDD0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662F0424193CB5D700E7DDD0 /* Parse.framework */; };
+		66CD300F1946224A0081A488 /* TTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CD300E1946224A0081A488 /* TTMViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		662F0420193CB54800E7DDD0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		662F0422193CB57800E7DDD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		662F0424193CB5D700E7DDD0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		66CD300D1946224A0081A488 /* TTMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMViewController.h; sourceTree = "<group>"; };
+		66CD300E1946224A0081A488 /* TTMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +150,8 @@
 		662F03DD193CB1C500E7DDD0 /* Talk To Me */ = {
 			isa = PBXGroup;
 			children = (
-				662F03E6193CB1C500E7DDD0 /* TTMAppDelegate.h */,
-				662F03E7193CB1C500E7DDD0 /* TTMAppDelegate.m */,
-				662F03E9193CB1C500E7DDD0 /* Images.xcassets */,
+				66CD300D1946224A0081A488 /* TTMViewController.h */,
+				66CD300E1946224A0081A488 /* TTMViewController.m */,
 				662F03DE193CB1C500E7DDD0 /* Supporting Files */,
 			);
 			path = "Talk To Me";
@@ -158,6 +160,9 @@
 		662F03DE193CB1C500E7DDD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				662F03E9193CB1C500E7DDD0 /* Images.xcassets */,
+				662F03E6193CB1C500E7DDD0 /* TTMAppDelegate.h */,
+				662F03E7193CB1C500E7DDD0 /* TTMAppDelegate.m */,
 				662F03DF193CB1C500E7DDD0 /* Talk To Me-Info.plist */,
 				662F03E0193CB1C500E7DDD0 /* InfoPlist.strings */,
 				662F03E3193CB1C500E7DDD0 /* main.m */,
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				662F03E8193CB1C500E7DDD0 /* TTMAppDelegate.m in Sources */,
+				66CD300F1946224A0081A488 /* TTMViewController.m in Sources */,
 				662F03E4193CB1C500E7DDD0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +497,7 @@
 				662F0402193CB1C500E7DDD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		662F0403193CB1C500E7DDD0 /* Build configuration list for PBXNativeTarget "Talk To MeTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +506,7 @@
 				662F0405193CB1C500E7DDD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

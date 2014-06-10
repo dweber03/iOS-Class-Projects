@@ -1,48 +1,21 @@
 //
-//  TTMAppDelegate.m
-//  Talk To Me
+//  AMAAppDelegate.m
+//  AdMonkey
 //
-//  Created by Derek Weber on 6/2/14.
+//  Created by Derek Weber on 6/10/14.
 //  Copyright (c) 2014 Derek Weber. All rights reserved.
 //
 
-#import "TTMAppDelegate.h"
-#import <Parse/Parse.h>
+#import "AMAAppDelegate.h"
 
-@implementation TTMAppDelegate
+@implementation AMAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    [Parse setApplicationId:@"rtZZqRJP1GBbim8mlkcgkpGofF4CWL6Vmfh25Skq"
-                  clientKey:@"M2n8ZrgQXiiZbl6Hra4y2t9scRNOBbwvOD6SR0uE"];
-    
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-     UIRemoteNotificationTypeAlert|
-     UIRemoteNotificationTypeSound];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
     return YES;
 }
-
-
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    // Store the deviceToken in the current installation and save it to Parse.
-    
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
-}
-
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
-}
-
+							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
