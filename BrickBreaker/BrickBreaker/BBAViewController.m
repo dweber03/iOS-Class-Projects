@@ -62,7 +62,7 @@
     score = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 280, SCREEN_HEIGHT - 300)];
     score.backgroundColor = [UIColor blackColor];
     score.textAlignment = NSTextAlignmentLeft;
-    score.text = [NSString stringWithFormat:@"%d", [BBAGameData mainData].topScore];
+    score.text = [NSString stringWithFormat:@"%d",[BBAGameData mainData].topScore];
     [self.view addSubview:score];
     
     lives = 3;
@@ -92,7 +92,7 @@
 -(void)addPoints:(int)points
 {
     score.text = [NSString stringWithFormat:@"%d", points];
-    score.textColor = [UIColor blueColor];
+    score.textColor = [UIColor redColor];
     
     NSLog(@"Total points = %d", points);
 
@@ -148,6 +148,6 @@
 }
 */
 
-- (BOOL) prefersStatusBarHidden {return YES; }
+- (BOOL) prefersStatusBarHidden {return YES;}
 
 @end
