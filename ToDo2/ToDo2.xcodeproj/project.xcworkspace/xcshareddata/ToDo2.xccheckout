@@ -10,29 +10,29 @@
 	<string>ToDo2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>759B6C41-E063-4E92-AB44-31CCB7EEACED</key>
+		<key>DE7BA0F78BEA066D9FE0A6B90043C5963507AC8A</key>
 		<string>https://github.com/dweber03/iOS-Class-Projects.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ToDo2/ToDo2.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>759B6C41-E063-4E92-AB44-31CCB7EEACED</key>
+		<key>DE7BA0F78BEA066D9FE0A6B90043C5963507AC8A</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dweber03/iOS-Class-Projects.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>759B6C41-E063-4E92-AB44-31CCB7EEACED</string>
+	<string>DE7BA0F78BEA066D9FE0A6B90043C5963507AC8A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>759B6C41-E063-4E92-AB44-31CCB7EEACED</string>
+			<string>DE7BA0F78BEA066D9FE0A6B90043C5963507AC8A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS-Class-Projects</string>
 		</dict>
