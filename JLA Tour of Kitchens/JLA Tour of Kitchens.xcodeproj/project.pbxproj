@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6621228319B8D1C3001DA8EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621228219B8D1C3001DA8EC /* main.m */; };
+		6621228619B8D1C3001DA8EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621228519B8D1C3001DA8EC /* AppDelegate.m */; };
+		6621228919B8D1C3001DA8EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621228819B8D1C3001DA8EC /* ViewController.m */; };
+		6621228C19B8D1C3001DA8EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6621228A19B8D1C3001DA8EC /* Main.storyboard */; };
+		6621228E19B8D1C3001DA8EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6621228D19B8D1C3001DA8EC /* Images.xcassets */; };
+		6621229A19B8D1C3001DA8EC /* JLA_Tour_of_KitchensTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621229919B8D1C3001DA8EC /* JLA_Tour_of_KitchensTests.m */; };
+		662122A519B8D3DB001DA8EC /* UIView+JLAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 662122A419B8D3DB001DA8EC /* UIView+JLAView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6621229419B8D1C3001DA8EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6621227519B8D1C3001DA8EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6621227C19B8D1C3001DA8EC;
+			remoteInfo = "JLA Tour of Kitchens";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6621227D19B8D1C3001DA8EC /* JLA Tour of Kitchens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JLA Tour of Kitchens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6621228119B8D1C3001DA8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6621228219B8D1C3001DA8EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6621228419B8D1C3001DA8EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6621228519B8D1C3001DA8EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6621228719B8D1C3001DA8EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6621228819B8D1C3001DA8EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6621228B19B8D1C3001DA8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6621228D19B8D1C3001DA8EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6621229319B8D1C3001DA8EC /* JLA Tour of KitchensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JLA Tour of KitchensTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6621229819B8D1C3001DA8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6621229919B8D1C3001DA8EC /* JLA_Tour_of_KitchensTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLA_Tour_of_KitchensTests.m; sourceTree = "<group>"; };
+		662122A319B8D3DB001DA8EC /* UIView+JLAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLAView.h"; sourceTree = "<group>"; };
+		662122A419B8D3DB001DA8EC /* UIView+JLAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLAView.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6621227A19B8D1C3001DA8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621229019B8D1C3001DA8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6621227419B8D1C3001DA8EC = {
+			isa = PBXGroup;
+			children = (
+				6621227F19B8D1C3001DA8EC /* JLA Tour of Kitchens */,
+				6621229619B8D1C3001DA8EC /* JLA Tour of KitchensTests */,
+				6621227E19B8D1C3001DA8EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6621227E19B8D1C3001DA8EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6621227D19B8D1C3001DA8EC /* JLA Tour of Kitchens.app */,
+				6621229319B8D1C3001DA8EC /* JLA Tour of KitchensTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6621227F19B8D1C3001DA8EC /* JLA Tour of Kitchens */ = {
+			isa = PBXGroup;
+			children = (
+				6621228419B8D1C3001DA8EC /* AppDelegate.h */,
+				6621228519B8D1C3001DA8EC /* AppDelegate.m */,
+				6621228719B8D1C3001DA8EC /* ViewController.h */,
+				6621228819B8D1C3001DA8EC /* ViewController.m */,
+				662122A319B8D3DB001DA8EC /* UIView+JLAView.h */,
+				662122A419B8D3DB001DA8EC /* UIView+JLAView.m */,
+				6621228A19B8D1C3001DA8EC /* Main.storyboard */,
+				6621228D19B8D1C3001DA8EC /* Images.xcassets */,
+				6621228019B8D1C3001DA8EC /* Supporting Files */,
+			);
+			path = "JLA Tour of Kitchens";
+			sourceTree = "<group>";
+		};
+		6621228019B8D1C3001DA8EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6621228119B8D1C3001DA8EC /* Info.plist */,
+				6621228219B8D1C3001DA8EC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6621229619B8D1C3001DA8EC /* JLA Tour of KitchensTests */ = {
+			isa = PBXGroup;
+			children = (
+				6621229919B8D1C3001DA8EC /* JLA_Tour_of_KitchensTests.m */,
+				6621229719B8D1C3001DA8EC /* Supporting Files */,
+			);
+			path = "JLA Tour of KitchensTests";
+			sourceTree = "<group>";
+		};
+		6621229719B8D1C3001DA8EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6621229819B8D1C3001DA8EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6621227C19B8D1C3001DA8EC /* JLA Tour of Kitchens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6621229D19B8D1C3001DA8EC /* Build configuration list for PBXNativeTarget "JLA Tour of Kitchens" */;
+			buildPhases = (
+				6621227919B8D1C3001DA8EC /* Sources */,
+				6621227A19B8D1C3001DA8EC /* Frameworks */,
+				6621227B19B8D1C3001DA8EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JLA Tour of Kitchens";
+			productName = "JLA Tour of Kitchens";
+			productReference = 6621227D19B8D1C3001DA8EC /* JLA Tour of Kitchens.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6621229219B8D1C3001DA8EC /* JLA Tour of KitchensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662122A019B8D1C3001DA8EC /* Build configuration list for PBXNativeTarget "JLA Tour of KitchensTests" */;
+			buildPhases = (
+				6621228F19B8D1C3001DA8EC /* Sources */,
+				6621229019B8D1C3001DA8EC /* Frameworks */,
+				6621229119B8D1C3001DA8EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6621229519B8D1C3001DA8EC /* PBXTargetDependency */,
+			);
+			name = "JLA Tour of KitchensTests";
+			productName = "JLA Tour of KitchensTests";
+			productReference = 6621229319B8D1C3001DA8EC /* JLA Tour of KitchensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6621227519B8D1C3001DA8EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Derek Weber";
+				TargetAttributes = {
+					6621227C19B8D1C3001DA8EC = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					6621229219B8D1C3001DA8EC = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 6621227C19B8D1C3001DA8EC;
+					};
+				};
+			};
+			buildConfigurationList = 6621227819B8D1C3001DA8EC /* Build configuration list for PBXProject "JLA Tour of Kitchens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6621227419B8D1C3001DA8EC;
+			productRefGroup = 6621227E19B8D1C3001DA8EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6621227C19B8D1C3001DA8EC /* JLA Tour of Kitchens */,
+				6621229219B8D1C3001DA8EC /* JLA Tour of KitchensTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6621227B19B8D1C3001DA8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6621228C19B8D1C3001DA8EC /* Main.storyboard in Resources */,
+				6621228E19B8D1C3001DA8EC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621229119B8D1C3001DA8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6621227919B8D1C3001DA8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6621228919B8D1C3001DA8EC /* ViewController.m in Sources */,
+				662122A519B8D3DB001DA8EC /* UIView+JLAView.m in Sources */,
+				6621228619B8D1C3001DA8EC /* AppDelegate.m in Sources */,
+				6621228319B8D1C3001DA8EC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621228F19B8D1C3001DA8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6621229A19B8D1C3001DA8EC /* JLA_Tour_of_KitchensTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6621229519B8D1C3001DA8EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6621227C19B8D1C3001DA8EC /* JLA Tour of Kitchens */;
+			targetProxy = 6621229419B8D1C3001DA8EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6621228A19B8D1C3001DA8EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6621228B19B8D1C3001DA8EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6621229B19B8D1C3001DA8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6621229C19B8D1C3001DA8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6621229E19B8D1C3001DA8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "JLA Tour of Kitchens/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6621229F19B8D1C3001DA8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "JLA Tour of Kitchens/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		662122A119B8D1C3001DA8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JLA Tour of KitchensTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLA Tour of Kitchens.app/JLA Tour of Kitchens";
+			};
+			name = Debug;
+		};
+		662122A219B8D1C3001DA8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JLA Tour of KitchensTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLA Tour of Kitchens.app/JLA Tour of Kitchens";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6621227819B8D1C3001DA8EC /* Build configuration list for PBXProject "JLA Tour of Kitchens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6621229B19B8D1C3001DA8EC /* Debug */,
+				6621229C19B8D1C3001DA8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6621229D19B8D1C3001DA8EC /* Build configuration list for PBXNativeTarget "JLA Tour of Kitchens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6621229E19B8D1C3001DA8EC /* Debug */,
+				6621229F19B8D1C3001DA8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		662122A019B8D1C3001DA8EC /* Build configuration list for PBXNativeTarget "JLA Tour of KitchensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662122A119B8D1C3001DA8EC /* Debug */,
+				662122A219B8D1C3001DA8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6621227519B8D1C3001DA8EC /* Project object */;
+}
